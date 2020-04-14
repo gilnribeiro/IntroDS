@@ -13077,9 +13077,32 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>In this second part of Introduction to Programing course, we will be worknig with data. This part will be a  practical one and so we will be using an example database.</p>
-<p>The data that will be using was extracted from <a href="https://databank.worldbank.org/source/world-development-indicators">The World Bank</a>. The extraction period is from 2000 to the last available date (in most cases 2017).</p>
-<p>A full description of the dataset can be find <a href="https://github.com/EduardoHidalgoGarcia/WorldBankData/blob/master/World%20Bank%20Indicators%202000%20-%202018.pdf">here</a>.</p>
+<h1 id="Introduction-to-Programming">Introduction to Programming<a class="anchor-link" href="#Introduction-to-Programming">&#182;</a></h1><p><br/>
+<br/></p>
+<h1 id="Datasets"><strong><em>Datasets</em></strong><a class="anchor-link" href="#Datasets">&#182;</a></h1><p><br/></p>
+<ol>
+<li><a href="#0">Setup</a><br></li>
+<li><a href="#I">About Pandas</a><br></li>
+<li><a href="#II">Creating &amp; Reading</a><br>
+ 2.1 <a href="#II.I">Creating data</a><br>
+ 2.2 <a href="#II.II">Reading data</a><br></li>
+<li><a href="#III">Indexing, Selecting and Assigning</a><br>
+ 3.1 <a href="#III.I">Naitive Python accessors</a><br>
+ 3.2 <a href="#III.II">Indexing using Pandas syntaxis</a><br>
+ 3.3 <a href="#III.III">Manipulating the index</a><br>
+ 3.4 <a href="#III.VI">Conditional Selection</a><br>
+ 3.5 <a href="#III.V">Assigning data</a><br></li>
+<li><a href="#VI">Summary Functions and Maps</a>
+ 4.1 <a href="#VI.I">Summary functions</a>
+ 4.2 <a href="#VI.II">Maps</a></li>
+<li><a href="#V">Grouping and Sorting</a></li>
+<li><a href="#IV">Data Types and Missing Values</a>
+ 6.1 <a href="#IV.I">Data Types</a>
+ 6.2 <a href="#IV.II">Missing data</a></li>
+<li><a href="#IIV">Renaming and Combining</a>
+ 7.1 <a href="#IIV.I">Renaming</a>
+ 7.2 <a href="#IIV.II">Combining</a></li>
+</ol>
 
 </div>
 </div>
@@ -13087,224 +13110,22 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2><h4 id="April-15">April 15<a class="anchor-link" href="#April-15">&#182;</a></h4><table>
-<thead><tr>
-<th style="text-align:center">General Topic</th>
-<th style="text-align:center">Single topics</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Estimated time</th>
-<th style="text-align:center">Instructor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Creating, Reading and Writing</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Indexing, Selecting and Assigning</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Summary Functions and Maps</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Grouping and Sorting</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Data Types and Missing Values</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Datasets</td>
-<td style="text-align:center">Renaming and Combining</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-</tbody>
-</table>
-<h4 id="April-22">April 22<a class="anchor-link" href="#April-22">&#182;</a></h4><table>
-<thead><tr>
-<th style="text-align:center">General Topic</th>
-<th style="text-align:center">Single topics</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Estimated time</th>
-<th style="text-align:center">Instructor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Intro to ML</td>
-<td style="text-align:center">Missing Values</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Intro to ML</td>
-<td style="text-align:center">Categorical Variables</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Visualization</td>
-<td style="text-align:center">plotnine “The grammar of graphics”</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Intro to ML</td>
-<td style="text-align:center">Logistic Regression</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">30 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Intro to ML</td>
-<td style="text-align:center">Q&amp;A</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">90 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-</tbody>
-</table>
-<h4 id="May-6">May 6<a class="anchor-link" href="#May-6">&#182;</a></h4><table>
-<thead><tr>
-<th style="text-align:center">General Topic</th>
-<th style="text-align:center">Single topics</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Estimated time</th>
-<th style="text-align:center">Instructor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Base. mod., Perf. metr. &amp; Cr. Val.</td>
-<td style="text-align:center">Theory</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Decision Tree</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Underfitting and Overfitting</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Random Forest</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Extras">Extras<a class="anchor-link" href="#Extras">&#182;</a></h4><table>
-<thead><tr>
-<th style="text-align:center">General Topic</th>
-<th style="text-align:center">Single topics</th>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Estimated time</th>
-<th style="text-align:center">Instructor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Gradient Boosting  (XGBoost)</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Magic Loop (compare dif. models)</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Artificial Neural Networks (ANN)</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo  - Miguel</td>
-</tr>
-<tr>
-<td style="text-align:center">Machine Learning</td>
-<td style="text-align:center">Q&amp;A</td>
-<td style="text-align:center">T&amp;E</td>
-<td style="text-align:center">60 min</td>
-<td style="text-align:center">Eduardo Hidalgo</td>
-</tr>
-</tbody>
-</table>
-<h3 id="About-the-information-sources">About the information sources<a class="anchor-link" href="#About-the-information-sources">&#182;</a></h3><p>Below are the links that you can follow to go to the webpages of the courses that serve as basis for the contruction of this Crash Course. They are arrange by topic:</p>
-<ul>
-<li>Python: <a href="https://www.udemy.com/complete-python-bootcamp/?couponCode=COMPLETE_GITHUB">Udemy</a></li>
-<li>pandas: <a href="https://www.kaggle.com/learn/pandas">Kaggle Course</a></li>
-<li>Intro to ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Kaggle Course</a></li>
-<li>Machine Learning: <a href="https://www.kaggle.com/learn/intermediate-machine-learning">Kaggle Course</a></li>
-<li>plotnine: <a href="https://towardsdatascience.com/how-to-use-ggplot2-in-python-74ab8adec129">Medium</a></li>
-<li>Github: <a href="https://www.youtube.com/results?search_query=what+is+github">Youtube</a></li>
-<li>Logistic regresion: <a href="https://www.datacamp.com/community/tutorials/understanding-logistic-regression-python">DataCamp</a></li>
-<li>Logistic regresion: <a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxpdGFtbWFjcm9lY29ub21ldHJpYXxneDpiMjY5ZGZlZWYyM2M2MDE">ITAM</a></li>
-<li>Performance Metrics: <a href="https://blog.exsilio.com/all/accuracy-precision-recall-f1-score-interpretation-of-performance-measures/">blog.exsilio.com</a></li>
-<li>ROC curve: <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">Wikipedia</a></li>
-<li>XGBoost: <a href="https://hackernoon.com/want-a-complete-guide-for-xgboost-model-in-python-using-scikit-learn-sc11f31bq">Hackernoon</a></li>
-<li>ANN: <a href="https://medium.com/@sanchittanwar75/introduction-to-neural-networks-660f6909fba9">Medium</a></li>
-</ul>
-<h3 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h3><p><code>pip install -r requirements.txt</code></p>
-<p>For Windows users please note that it is only possible to download <code>xgboost</code> package by using a conda environment.</p>
-<p>Unfortunately, <code>pip</code> comand doesn't work for Windows os in that specific package.</p>
-<p><strong>Extras</strong> is the only place where we will use that specific package.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Working-Directory">Working Directory<a class="anchor-link" href="#Working-Directory">&#182;</a></h3><p>To see where is the <em>current working directory</em> for this specific <code>jupyter notebook</code> we leverage the method <code>getcwd()</code> from package <code>os</code></p>
+<h2 id="0.-Setup">0. <a href="#0">Setup</a><a class="anchor-link" href="#0.-Setup">&#182;</a></h2><p><a id="0"></a>
+<br/></p>
+<p>To see where is the <em>current working directory</em> for this specific <code>jupyter notebook</code> we leverage the method <code>getcwd()</code> from package <code>os</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span>  <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;IntroDS&quot;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 </pre></div>
 
@@ -13312,31 +13133,47 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;C:\\Users\\eduar\\Documents\\BackUp\\Classes\\IntroProgrammingNovaSBE2019\\IntroDS&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Current directory</em> of a specific <code>jupyter notebook</code> is usually originally set to where the file is stored. However, we can change our <em>current working directory</em> by leveraging the method <code>chdir()</code> from the package <code>os</code>. For example:</p>
+<p><em>Current directory</em> of a specific <code>jupyter notebook</code> is usually originally set to where the file is stored. Remember that during the first part of this course we learn that it is possible to change our <em>current working directory</em> by leveraging the method <code>chdir()</code> from the package <code>os</code>.</p>
+<p>The <code>while</code> loop above will <em>check</em> if the ending string returned by <code>os.getcwd()</code> is equal to "IntroDS", while this condition it will keep going one folder backwards.</p>
+<p><strong>IntroDS</strong> is the name of the folder we have created for this second part of the course. The structure of it is as follows:</p>
+<ul>
+<li>data<ul>
+<li>Data_Extract_From_World_Development_Indicators-OCDE-BRCH-EU.xlsx</li>
+<li>WorldBankDataReshaped.csv</li>
+</ul>
+</li>
+<li>images<ul>
+<li>DSKC_logo.png</li>
+</ul>
+</li>
+<li>metadata<ul>
+<li>Expense.xlsx</li>
+<li>Final Consumption Expenditure.xlsx</li>
+<li>Militar Expenditure.xlsx</li>
+</ul>
+</li>
+<li>notebooks<ul>
+<li>NOVASBEIP2020.html</li>
+<li>NOVASBEIP2020.ipynb</li>
+<li>ReshapingWorldBankData.R</li>
+</ul>
+</li>
+<li>README.md</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-About-pandas">1. <a href="#I">About pandas</a><a class="anchor-link" href="#1.-About-pandas">&#182;</a></h2><p><a id="I"></a>
+<br/></p>
+<p>The most popular <code>Python</code> library for data analysis is <code>pandas</code>. In this part we will learn how to create our own data, along with how to work with data that already exists (i.e. how to import it to <code>Python</code>). To use <code>pandas</code> you will typically start with the following line of code.</p>
 
 </div>
 </div>
@@ -13344,38 +13181,6 @@ div#notebook {
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#path=&#39;your_desired_path&#39;</span>
-<span class="c1">#os.chdir(path)</span>
-<span class="c1">#os.getcwd()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Exercise 1</p>
-<p>Try on identifying where is your current working directory and modify the path so it aims to the CrashCoursePython folder on your local computer.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pandas">Pandas<a class="anchor-link" href="#Pandas">&#182;</a></h1><p>The most popular <code>Python</code> library for data analysis is <code>pandas</code>. In this part we will learn how to create our own data, along with how to work with data that already exists (i.e. how to import it to <code>Python</code>). To use <code>pandas</code> you will typically start with the following line of code.</p>
-<h2 id="Creating,-Reading-&amp;-Writting-data">Creating, Reading &amp; Writting data<a class="anchor-link" href="#Creating,-Reading-&amp;-Writting-data">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13390,18 +13195,38 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(note that Anaconda environments known as conda already includes the <code>pandas</code><em>package</em>).</p>
-<h4 id="Creating-data">Creating data<a class="anchor-link" href="#Creating-data">&#182;</a></h4><p>There are two core objects in pandas: the <code>DataFrame</code> and the <code>Series</code>.</p>
-<h5 id="DataFrame">DataFrame<a class="anchor-link" href="#DataFrame">&#182;</a></h5><hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Creating-&amp;-Reading-data">2. <a href="#II">Creating &amp; Reading data</a><a class="anchor-link" href="#2.-Creating-&amp;-Reading-data">&#182;</a></h2><p><a id="II"></a>
+<br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.1-Creating-data">2.1 <a href="#II.I">Creating data</a><a class="anchor-link" href="#2.1-Creating-data">&#182;</a></h3><p><a id="II.I"></a>
+<br/></p>
+<p>There are two core objects in pandas: the <code>DataFrame</code> and the <code>Series</code>.
+<br/></p>
+<h4 id="2.1.1-DataFrame">2.1.1 <code>DataFrame</code><a class="anchor-link" href="#2.1.1-DataFrame">&#182;</a></h4><hr>
 
 <p>A <code>DataFrame</code>is a table that contains and array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column.</p>
-<p>As an example let's generate our first <code>DataFrame</code>. For this we will need to declare a <code>dictionary</code> and then feed it to the <code>pandas</code> method <code>DataFrame()</code>. <code>Dictionaries</code> are one of the basic <code>Python</code> data structures (as we learned on the first part of this course). If you are familiar with other programming languages you can think of them as mappings or collection of objects that are stored by a <em>key</em>, unlike other structures such as sequences or lists that store objects by their relative position.</p>
+<p>As an example let's generate our first <code>DataFrame</code>. For this we will need to declare a <code>dictionary</code> and then feed it to the <code>pandas</code> method <code>DataFrame()</code>.</p>
+<p><code>Dictionaries</code> are one of the basic <code>Python</code> data structures (as we learned on the first part of this course). If you are familiar with other programming languages you can think of them as mappings or collection of objects that are stored by a <em>key</em>, unlike other structures such as sequences or lists that store objects by their relative position.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_first_dictionary</span><span class="o">=</span><span class="p">{</span>
@@ -13417,7 +13242,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_first_dictionary</span><span class="p">)</span>
@@ -13433,7 +13258,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13493,7 +13318,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Yes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span> <span class="s1">&#39;No&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">131</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
@@ -13509,7 +13334,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13570,7 +13395,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Yes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>
@@ -13588,7 +13413,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13640,9 +13465,54 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Series">Series<a class="anchor-link" href="#Series">&#182;</a></h5><hr>
+<p><br/></p>
+<h5 id="2.1.2-Series">2.1.2 <code>Series</code><a class="anchor-link" href="#2.1.2-Series">&#182;</a></h5><hr>
 
 <p>A <code>Series</code> is a sequence of data values. If a <code>DataFrame</code> is a <strong>table</strong>, a <code>Series</code> is a <strong>list</strong>, both with special methods and constructors than the ones available by using the <code>Matrix</code> (two-dimensional array) and <code>list</code> data structures. So, it is possible to generate a <code>pandas</code> <code>Series</code> with nothing more than a list, for example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2017&#39;</span><span class="p">,</span><span class="s1">&#39;2018&#39;</span><span class="p">,</span><span class="s1">&#39;2019&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Vendas de pasteis de Nata&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2017    10
+2018    20
+2019    25
+Name: Vendas de pasteis de Nata, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <code>Series</code> is, in essence, a single column of a <code>DataFrame</code>. So you can assign column values to the <code>Series</code> the same way as before, using an <code>index</code> parameter. However</p>
 
 </div>
 </div>
@@ -13686,7 +13556,22 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A <code>Series</code> is, in essence, a single column of a <code>DataFrame</code>. So you can assign column values to the <code>Series</code> the same way as before, using an <code>index</code> parameter. However</p>
+<p><hr></p>
+<hr>
+
+<p><strong>Summarizing</strong>, we saw that <code>pandas</code> library has two main objects <code>DataFrame</code> and <code>Series</code>. By this time it must be clear that they are intimately related. It's helpful to think of a DataFrame as actually being just a bunch of Series "glued together"</p>
+<p><hr></p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br/></p>
+<h3 id="2.2-Reading-data">2.2 <a href="#II.II">Reading data</a><a class="anchor-link" href="#2.2-Reading-data">&#182;</a></h3><p><a id="II.II"></a></p>
+<p><br/></p>
+<p>Data can be stored in any of a number of different forms and formats. By far the most basic format is the CSV file or <em>Comma-Separated Values</em>. The function from pandas that will allow us to read this format to Python is <code>read_csv()</code>. Now, lets read our example database using <code>read_csv()</code> function.</p>
 
 </div>
 </div>
@@ -13694,58 +13579,6 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2017&#39;</span><span class="p">,</span><span class="s1">&#39;2018&#39;</span><span class="p">,</span><span class="s1">&#39;2019&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Vendas de pasteis de Nata&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2017    10
-2018    20
-2019    25
-Name: Vendas de pasteis de Nata, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Summarizing</strong>, we saw that <code>pandas</code> library has two main objects <code>DataFrame</code> and <code>Series</code>. By this time it must be clear that they are intimately related. It's helpful to think of a DataFrame as actually being just a bunch of Series "glued together"</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Reading-data">Reading data<a class="anchor-link" href="#Reading-data">&#182;</a></h4><p>Data can be stored in any of a number of different forms and formats. By far the most basic format is the CSV file or <em>Comma-Separated Values</em>. The function from pandas that will allow us to read this format to Python is <code>read_csv()</code>. Now, lets read our example database using <code>read_csv()</code> function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">WorldBankDataReshaped.csv&quot;</span><span class="p">)</span>
@@ -13766,7 +13599,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
@@ -13782,7 +13615,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13801,14 +13634,14 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So our <code>DataFrame</code> has 59 k records split accross 6 different columns. That is almost 356 k entries!</p>
-<p>We can examine the contents of the resultant <code>DataFrame</code> using the <code>head()</code> <strong>method</strong>, which grabs the first five rows.</p>
+<p>We can examine the contents of the resultant <code>DataFrame</code> using the <code>head()</code> <strong>method</strong>, which grabs, by default, the first five rows.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13824,7 +13657,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13922,7 +13755,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">WorldBankDataReshaped.csv&quot;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -13935,7 +13768,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13951,7 +13784,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -14051,7 +13884,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">Data_Extract_From_World_Development_Indicators-OCDE-BRCH-EU.xlsx&quot;</span><span class="p">)</span>
@@ -14064,7 +13897,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14080,7 +13913,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -14265,7 +14098,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 <p>The dataset above is the extraction as downloaded from <a href="https://databank.worldbank.org/data/source/world-development-indicators#">World Bank's databank</a>.</p>
 <p>So far we have declared to our <em>environment</em> two <code>dataframe</code>  objects: <code>data</code> &amp; <code>row_data</code>. The first one has been preprocessed in such a way to reshape it from a wide to a long format. The only difference is that for each country data belonging to a specific series was horizonatally presented (in raw data), but now it is in a <em>panel data</em> fashion.</p>
 <div class="alert alert-block alert-info">
-<b>Note:</b> that you can always access to the <i>specifications</i> of a specific method by simply ending the method statement with a question mark instead of parenthesis. For example, lets see the additional parameters avialable in the <code>read_excel()</code> method.
+<b>Note:</b> that you can always access to the <i>specifications</i> of a method by simply ending the method statement with a question mark instead of parenthesis. For example, lets see the additional parameters available in the <code>read_excel</code> method.
 </div>
 </div>
 </div>
@@ -14274,6 +14107,8 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, note that optional parameter <code>sheet_name</code> will let you pick the Excel worksheet of your choice (the default one is the first one indexed by number 0).</p>
+<hr>
+
 <h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h4><hr>
 
 <p>Use the information about the parameters of method <code>read_excel()</code> mentioned above to:</p>
@@ -14288,7 +14123,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">Data_Extract_From_World_Development_Indicators-OCDE-BRCH-EU.xlsx&quot;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14301,7 +14136,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -14317,7 +14152,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -14475,8 +14310,21 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Indexing,-Selecting-and-Assigning">Indexing, Selecting and Assigning<a class="anchor-link" href="#Indexing,-Selecting-and-Assigning">&#182;</a></h2><p>Selecting specific values of a pandas <code>DataFrame</code> or <code>Series</code> to work on is an implicit step in almost any data operation you'll run, so one of the first things you need to learn in working with data in Python is how to go about selecting the data points relevant to you quickly and effectively.</p>
-<h3 id="Naitive-Python-accessors">Naitive Python accessors<a class="anchor-link" href="#Naitive-Python-accessors">&#182;</a></h3><p>Native Python objects provide good ways of indexing data. Pandas carries all of these over, which helps make it easy to start with.</p>
+<p><br/></p>
+<h2 id="3.-Indexing,-Selecting-and-Assigning">3. <a href="#III">Indexing, Selecting and Assigning</a><a class="anchor-link" href="#3.-Indexing,-Selecting-and-Assigning">&#182;</a></h2><p><a id="III"></a>
+<br/></p>
+<p>Selecting specific values of a pandas <code>DataFrame</code> or <code>Series</code> to work on is an implicit step in almost any data operation you'll run, so one of the first things you need to learn in working with data in Python is how to go about selecting the data points relevant to you quickly and effectively.</p>
+<p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.1-Naitive-Python-accessors">3.1 <a href="#III.I">Naitive Python accessors</a><a class="anchor-link" href="#3.1-Naitive-Python-accessors">&#182;</a></h3><p><a id="III.I"></a>
+<br/></p>
+<p>Native Python objects provide good ways of indexing data. Pandas carries all of these over, which helps make it easy to start with.</p>
 <p>In Python, we can access the property of an object by accessing it as an attribute. A <code>book</code> object, for example, might have a <code>title</code> property, which we can access by calling <code>book.title</code>. <strong>Columns in a pandas</strong> <code>DataFrame</code> <strong>work in much the same way</strong>.</p>
 <p>Hence to access the <code>Continent</code> <strong>property</strong> of our <code>data</code> we can use:</p>
 
@@ -14485,7 +14333,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Continent</span>
@@ -14501,7 +14349,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14538,7 +14386,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Continent&#39;</span><span class="p">]</span>
@@ -14554,7 +14402,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -14584,6 +14432,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><br/></p>
 <p>Or <code>[[ ]]</code> for a <code>list</code> of columns.</p>
 
 </div>
@@ -14591,7 +14440,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Series Name&#39;</span><span class="p">,</span><span class="s1">&#39;Continent&#39;</span><span class="p">]]</span>
@@ -14607,7 +14456,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14710,16 +14559,14 @@ Name: Continent, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-block alert-success">
-<b>Summarizing:</b> As inherit forms from Python naitive objects we have <b>two</b> ways to select columns,  by <b>attribute</b> of the <code>DataFrame</code> or by <b>index</b> of the <code>dictionary</code> we can select specific <code>Series</code> out of a <code>DataFrame</code>. Neither of them is more or less syntactically valid than the other, but the indexing operator <code>[]</code> does have the advantage that it can handle column names with reserved characters in them (e.g. columns names separated by blank spaces such as <code>Country Name</code>, <code>data.Country Name</code> would not work!).
-</div><p>Pandas <code>Series</code>is pretty much like <code>list</code> wrapped inside a fancy dictionary. And, so we can select a specific value by using the indexing operator once more, for example lets address the first observation fo the column <code>Country Name</code>.</p>
+<p>Pandas <code>Series</code> are pretty much like <code>list</code>s wrapped inside a fancy dictionary. And, so we can select a specific value by using the indexing operator once more, for example lets address the first observation fo the column <code>Country Name</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -14735,7 +14582,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -14753,6 +14600,21 @@ Name: Continent, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><hr></p>
+<hr>
+
+<p><b>Summarizing:</b> As inherit forms from Python naitive objects we have <b>two</b> ways to select columns,  by <b>attribute</b> of the <code>DataFrame</code> or by <b>key</b> of the <code>dictionary</code> we can select specific <code>Series</code> out of a <code>DataFrame</code>. Neither of them is more or less syntactically valid than the other, but the indexing operator <code>[]</code> does have the advantage that it can handle column names with reserved characters in them (e.g. columns names separated by blank spaces such as <code>Country Name</code>, since <code>data.Country Name</code> would not work!)</p>
+<p><hr></p>
+<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<hr>
+
 <h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h4><hr>
 
 <p>Can you select element 4 of the same <code>Series</code>?</p>
@@ -14762,7 +14624,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Type your code here</span>
@@ -14776,8 +14638,19 @@ Name: Continent, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Indexing-using-pandas-syntaxis">Indexing using pandas syntaxis<a class="anchor-link" href="#Indexing-using-pandas-syntaxis">&#182;</a></h3><p>Pandas has its own accessor operatos, <code>loc[ ]</code> and <code>iloc[ ]</code>. For more advanced operations, these are the ones you are supposed to be using.</p>
-<p><strong>Index-based selection</strong> <code>iloc[ ]</code></p>
+<p><br/></p>
+<h3 id="3.2-Indexing-using-pandas-syntaxis">3.2 <a href="#III.II">Indexing using pandas syntaxis</a><a class="anchor-link" href="#3.2-Indexing-using-pandas-syntaxis">&#182;</a></h3><p><a id="III.II"></a>
+<br/></p>
+<p>Pandas has its own accessor operatos, <code>loc[ ]</code> and <code>iloc[ ]</code>. For more advanced operations, these are the ones you are supposed to be using.</p>
+<p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.2.1-Index-based-selection-iloc[-]">3.2.1 Index-based selection <code>iloc[ ]</code><a class="anchor-link" href="#3.2.1-Index-based-selection-iloc[-]">&#182;</a></h4><p><br/></p>
 <p>In pandas we have two paradigms for indexing. The first one we will review is the <strong>index-based selection</strong>. This simply means that we will be selecting data based on its numerical position in the <code>DataFrame</code> (as we did when we review <code>list</code>s). For this first paradigm we use the method <code>iloc[]</code>.</p>
 <p>To select the <strong>first row</strong> of our data <code>DataFrame</code>, we can do the follwoing.</p>
 
@@ -14786,7 +14659,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -14802,7 +14675,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14835,7 +14708,7 @@ Name: WLD, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
@@ -14851,7 +14724,7 @@ Name: WLD, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -14889,7 +14762,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -14905,7 +14778,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14934,7 +14807,7 @@ Name: Continent, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -14950,7 +14823,7 @@ Name: Continent, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14981,7 +14854,7 @@ Name: Continent, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span><span class="mi">5</span><span class="p">]</span>
@@ -14997,7 +14870,7 @@ Name: Continent, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -15025,7 +14898,7 @@ Name: Continent, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
@@ -15041,7 +14914,7 @@ Name: Continent, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -15134,16 +15007,18 @@ Name: Continent, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Label-based selection</strong> <code>loc[ ]</code></p>
+<p><br/></p>
+<h4 id="3.2.2-Label-based-selection-loc[-]">3.2.2 Label-based selection <code>loc[ ]</code><a class="anchor-link" href="#3.2.2-Label-based-selection-loc[-]">&#182;</a></h4><p><br/></p>
 <p>The second paradigm in pandas accesses to <code>DataFrame</code>s is the one followed by the <code>loc[ ]</code> method. In this paradigm, it's the data <strong>index value</strong>, not its position, which matters.</p>
 <p>For example, as befor lets address the first observation fo the column <code>Continent</code>.</p>
+<p><br/></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Continent&#39;</span><span class="p">]</span> 
@@ -15159,7 +15034,7 @@ Name: Continent, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -15177,11 +15052,13 @@ Name: Continent, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Differences between</strong> <code>loc[ ]</code><strong>and</strong> <code>iloc[ ]</code></p>
+<p><br/></p>
+<h4 id="3.2.3-Differences-between-loc[-]and-iloc[-]">3.2.3 Differences between <code>loc[ ]</code>and <code>iloc[ ]</code><a class="anchor-link" href="#3.2.3-Differences-between-loc[-]and-iloc[-]">&#182;</a></h4><p><br/></p>
 <p>The two methods use different indexing schemes.</p>
 <p><code>iloc[ ]</code> uses a scheme where the <strong>first</strong> element of the range is <strong>included</strong> and the <strong>last</strong> one is <strong>excluded</strong>. So, for example <code>.iloc[0:10]</code> will select entries 0,...,9. In contrast, <code>.loc[0:10]</code> indexes inclusively, so will output entries 0,...,10.</p>
 <p>This difference is due to the fact that <code>loc[ ]</code> is meant to work indexing strings. So for example this characteristic is very convenient when we need to index a dataframe (let it be called <code>df</code>) that contains index values such as fruits: <code>Apples,...,Potatoes,...,</code> and we want to select "all the alphabetical fruit choices between Apples and Potatoes". Then <code>df.loc['Apples':'Potatoes']</code> has a much more intuitive use than something like <code>df.loc['Apples':'Potatoet']</code> (t comes after s in the alphabet).</p>
 <p>Otherwise, the semantics and use of <code>loc[ ]</code> are the same as those for <code>iloc[ ]</code></p>
+<p><br/></p>
 
 </div>
 </div>
@@ -15189,15 +15066,17 @@ Name: Continent, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Manipulating-the-index">Manipulating the index<a class="anchor-link" href="#Manipulating-the-index">&#182;</a></h2><p>Label-based selection dervies its power from the lables in the index. So, we can manipulate the index in any way we see fit by using the method <code>set_index()</code>.</p>
-<p>For example, lets change the index of our data and set the column <code>registo</code> as the new index. But first lets save our data with the index reseted (remember that for this we had already introduce the method <code>reset_index()</code>. This will prevent that we loose our original index <code>idmesamostra</code> when setting the new one.</p>
+<h3 id="3.3-Manipulating-the-index">3.3 <a href="#III.III">Manipulating the index</a><a class="anchor-link" href="#3.3-Manipulating-the-index">&#182;</a></h3><p><a id="III.III"></a></p>
+<p><br/></p>
+<p>Label-based selection dervies its power from the lables in the index. So, we can manipulate the index in any way we see fit by using the method <code>set_index()</code>.</p>
+<p>For example, lets reset the index of our data. Remember that when first imported it we set the column <code>Time</code> as the new index.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -15211,8 +15090,11 @@ Name: Continent, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conditional-Selection">Conditional Selection<a class="anchor-link" href="#Conditional-Selection">&#182;</a></h2><p>This type of selection works well for <strong>asking interesting questions</strong> to our data. In particular, it helps to <em>ask</em> questions based on conditions.</p>
-<p>For example, suppose that for some reason we are interested in all european countries that have an average GDP of the period higher than 1,000,000,000,000 ($10^{12}$).</p>
+<p><br/></p>
+<h3 id="3.4-Conditional-Selection">3.4 <a href="#III.IV">Conditional Selection</a><a class="anchor-link" href="#3.4-Conditional-Selection">&#182;</a></h3><p><a id="III.VI"></a></p>
+<p><br/></p>
+<p>This type of selection works well for <strong>asking interesting questions</strong> to our data. In particular, it helps to <em>ask</em> questions based on conditions.</p>
+<p>For example, suppose that for some reason we are interested in all european countries that have an average GDP of the period higher than 1,000,000,000,000 (or $10^{12}$).</p>
 <p>First, we need to check if each observation has the column <code>Continent</code> equal to <strong>Europe</strong>.</p>
 
 </div>
@@ -15220,7 +15102,7 @@ Name: Continent, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition_1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Continent&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Europe&#39;</span>
@@ -15237,7 +15119,7 @@ Name: Continent, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -15273,7 +15155,7 @@ Name: Continent, Length: 59299, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">condition_1</span><span class="p">]</span>
@@ -15289,7 +15171,7 @@ Name: Continent, Length: 59299, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -15448,7 +15330,7 @@ Name: Continent, Length: 59299, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Generate the series</span>
@@ -15466,7 +15348,7 @@ Name: Continent, Length: 59299, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -15494,7 +15376,7 @@ Name: value, Length: 779, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Compare to the desire value</span>
@@ -15512,7 +15394,7 @@ Name: value, Length: 779, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -15548,7 +15430,7 @@ Name: value, Length: 779, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">condition_1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">condition_2</span><span class="p">)]</span>
@@ -15564,7 +15446,7 @@ Name: value, Length: 779, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -15717,7 +15599,7 @@ Name: value, Length: 779, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">condition_1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">condition_2</span><span class="p">)]</span>
@@ -15733,7 +15615,7 @@ Name: value, Length: 779, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -15879,7 +15761,8 @@ Name: value, Length: 779, dtype: bool</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Pandas built-in conditional selectors</strong> <code>.isin([])</code> and <code>.isnull()</code></p>
+<p><br/></p>
+<h4 id="3.3.1-Pandas-built-in-conditional-selectors-.isin([])-and-.isnull()">3.3.1 Pandas built-in conditional selectors <code>.isin([])</code> and <code>.isnull()</code><a class="anchor-link" href="#3.3.1-Pandas-built-in-conditional-selectors-.isin([])-and-.isnull()">&#182;</a></h4><p><br/></p>
 <p>Pandas comes with a few built-in conditional selectors. In this section we presented two of them.</p>
 <p><code>.isin([])</code> helps to select data whose value "is in" a <strong>list of values</strong>. For example, we can use it to select observations from the <a href="https://www.investopedia.com/terms/g/g5.asp">G7 countries</a>.</p>
 <p>Such countries are <strong>United States</strong>, the <strong>United Kingdom</strong>, <strong>Canada</strong>, <strong>Germany</strong>, <strong>Japan</strong>, <strong>Italy</strong>, <strong>France</strong>, and, until recently, Russia. In 2014, Russia was suspended indefinitely from the group after annexing Crimea, an autonomous republic of Ukraine. As a result, the G8 is now often referred to as the <strong>G7</strong>.</p>
@@ -15889,7 +15772,7 @@ Name: value, Length: 779, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span><span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;Italy&#39;</span><span class="p">,</span><span class="s1">&#39;France&#39;</span><span class="p">])]</span>
@@ -15905,7 +15788,7 @@ Name: value, Length: 779, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -16059,7 +15942,7 @@ Name: value, Length: 779, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
@@ -16075,7 +15958,7 @@ Name: value, Length: 779, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -16224,14 +16107,24 @@ Name: value, Length: 779, dtype: bool</pre>
 <p>The original dataset contains $\sim 59k$ entries. When filtered out all missing values we stay with $\sim 42k$ registers.</p>
 <p>For concluding this section, let me stress out that I used operator <code>.loc[:,'Series Name']</code> that returns exactly the same <code>Series</code> that the one you can get by using the native Python operator <code>data['Series Name']</code>.</p>
 <p>In the following lines of code I will be changing indistinctly between those two ways of selection. Just to emphasize that they produce exactly the same output (when outputing a <code>Series</code>). Note that <code>.loc[]</code> additionally let us to perform the type of <strong>conditional selection</strong> that we reviewed during this section.</p>
-<h2 id="Assigning-data">Assigning data<a class="anchor-link" href="#Assigning-data">&#182;</a></h2><p>Assigning data to a <code>Series</code> of column of a <code>DataFrame</code> is easy. It is possible to assign either a constant value:</p>
+<p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.5-Assigning-data">3.5 <a href="#III.V">Assigning data</a><a class="anchor-link" href="#3.5-Assigning-data">&#182;</a></h3><p><a id="III.V"></a></p>
+<p><br/></p>
+<p>Assigning data to a <code>Series</code> of column of a <code>DataFrame</code> is easy. It is possible to assign either a constant value:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Data Source&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;World Bank&#39;</span>
@@ -16248,7 +16141,7 @@ Name: value, Length: 779, dtype: bool</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -16284,7 +16177,7 @@ Name: Data Source, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;reverse_index&#39;</span><span class="p">]</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -16301,7 +16194,7 @@ Name: Data Source, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -16338,7 +16231,7 @@ to stop (exclusive) by step. The second one simply returns the number of items i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#range?</span>
@@ -16353,15 +16246,27 @@ to stop (exclusive) by step. The second one simply returns the number of items i
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Summary-Functions-and-Maps">Summary Functions and Maps<a class="anchor-link" href="#Summary-Functions-and-Maps">&#182;</a></h2><p>As data does not always come out of memory in the format we want it. Sometimes we need to do some more work ourselves to reformat it for the task at hand. In this section, we will be covering different opeartions that we can apply to our data to get the input "just right" for our models, presentations and so on. First lets see a group of functions that are usually and informally called <em>summary functions</em>.</p>
-<h3 id="Summary-functions">Summary functions<a class="anchor-link" href="#Summary-functions">&#182;</a></h3><p>Pandas provides many simple <em>summary functions</em> which helps when you need to restructure your data in some useful way. For example, consider the <code>.describe()</code> method.</p>
+<h2 id="4.-Summary-Functions-and-Maps">4. <a href="#VI">Summary Functions and Maps</a><a class="anchor-link" href="#4.-Summary-Functions-and-Maps">&#182;</a></h2><p><a id="VI"></a>
+<br/></p>
+<p>As data does not always come out of memory in the format we want it. Sometimes we need to do some more work ourselves to reformat it for the task at hand. In this section, we will be covering different opeartions that we can apply to our data to get the input "just right" for our models, presentations and so on. First lets see a group of functions that are usually and informally called <em>summary functions</em>.</p>
+<p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.1-Summary-functions">4.1 <a href="#VI.I">Summary functions</a><a class="anchor-link" href="#4.1-Summary-functions">&#182;</a></h3><p><a id="VI.I"></a>
+<br/></p>
+<p>Pandas provides many simple <em>summary functions</em> which helps when you need to restructure your data in some useful way. For example, consider the <code>.describe()</code> method.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -16377,7 +16282,7 @@ to stop (exclusive) by step. The second one simply returns the number of items i
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -16410,7 +16315,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -16426,7 +16331,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -16434,7 +16339,7 @@ Name: value, dtype: float64</pre>
 <div class="output_text output_subarea output_execute_result">
 <pre>count      59242
 unique        43
-top       Mexico
+top       Turkey
 freq        1444
 Name: Country Name, dtype: object</pre>
 </div>
@@ -16463,7 +16368,7 @@ Name: Country Name, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition_1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Series Name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Population, total&#39;</span>
@@ -16481,7 +16386,7 @@ Name: Country Name, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -16511,7 +16416,7 @@ Name: Country Name, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -16556,7 +16461,8 @@ memory usage: 3.4+ MB
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will return on talking about null values and columns types in a while.</p>
-<p><strong>Finding unique values</strong></p>
+<p><br/></p>
+<h4 id="4.1.1-Finding-unique-values">4.1.1 Finding unique values<a class="anchor-link" href="#4.1.1-Finding-unique-values">&#182;</a></h4><p><br/></p>
 <p>To see a list of unique values we can use the <code>.unique()</code> function.</p>
 <p>For example let's see the list of countries that this extraction has.</p>
 
@@ -16565,7 +16471,7 @@ memory usage: 3.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -16581,7 +16487,7 @@ memory usage: 3.4+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -16609,7 +16515,8 @@ memory usage: 3.4+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Counting unique values</strong></p>
+<p><br/></p>
+<h4 id="4.1.2-Counting-unique-values">4.1.2 Counting unique values<a class="anchor-link" href="#4.1.2-Counting-unique-values">&#182;</a></h4><p><br/></p>
 <p>To see a list of values and how often they occur in a data set we can use <code>value_counts()</code> method. For example, let's see how many observations per year we have.</p>
 
 </div>
@@ -16617,7 +16524,7 @@ memory usage: 3.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
@@ -16633,7 +16540,7 @@ memory usage: 3.4+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -16670,7 +16577,10 @@ Name: Time, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Maps">Maps<a class="anchor-link" href="#Maps">&#182;</a></h2><p>A <strong>map</strong> is a term borrowed from mathematics. It can be seen as a function that takes one set of values and "maps" them to another set of values. In data science we often need to create new representations from existing data, or transform data from the format we recieve it (for example from our operations team) to the format we want it to be later for models or business presentations. Maps are what handle this type of work.</p>
+<p><br/></p>
+<h3 id="4.2-Maps">4.2 <a href="#VI.II">Maps</a><a class="anchor-link" href="#4.2-Maps">&#182;</a></h3><p><a id="VI.II"></a>
+<br/>
+A <strong>map</strong> is a term borrowed from mathematics. It can be seen as a function that takes one set of values and "maps" them to another set of values. In data science we often need to create new representations from existing data, or transform data from the format we recieve it (for example from our operations team) to the format we want it to be later for models or business presentations. Maps are what handle this type of work.</p>
 <p>There are two mapping methods that you will often use.</p>
 <p><code>map()</code> is slightly the simpler one. For example, suppose that we need to remean the GDP to 0. We can do it in the following way.</p>
 <p>Again to do so, we need to:</p>
@@ -16686,7 +16596,7 @@ Name: Time, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#First extract the relevant subset of data</span>
@@ -16714,7 +16624,7 @@ Name: Time, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -16752,11 +16662,13 @@ Name: value, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The function you pass to <code>map()</code> expects a single value from the <code>Series</code>, and return a transformed version of that value (in our example that same value minus the column mean). <code>map()</code> returns a new <code>Series</code> where all the values have been transformed by your function.</p>
-<p><strong>Quick review about Python's lambda expression</strong></p>
+<p>The function you pass to <code>map()</code> expects a single value from the <code>Series</code>, and return a transformed version of that value (in our example that same value minus the column mean). <code>map()</code> returns a new <code>Series</code> where all the values have been transformed by your function.
+<br/></p>
 <hr>
 
-<p>Lambda expressions allow us to create "anonymous" functions. This basically means we can quickly make ad-hoc functions without needing to properly define a function using def.</p>
+<h4 id="4.2.1-Quick-review-about-Python's-lambda-expression">4.2.1 Quick review about Python's lambda expression<a class="anchor-link" href="#4.2.1-Quick-review-about-Python's-lambda-expression">&#182;</a></h4><p><hr>
+<br/>
+Lambda expressions allow us to create "anonymous" functions. This basically means we can quickly make ad-hoc functions without needing to properly define a function using def.</p>
 <p>Function objects returned by running lambda expressions work exactly the same as those created and assigned by <code>def</code>s. There is a key difference that makes lambda useful in specialized roles. Pandas library works very well with lambda expressions.</p>
 <p><strong>lambda's body is a single expression, not a block of statements.</strong></p>
 <ul>
@@ -16769,7 +16681,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -16784,7 +16696,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -16800,7 +16712,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -16825,7 +16737,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">lambda</span> <span class="n">num</span><span class="p">:</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span>
@@ -16841,7 +16753,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -16866,7 +16778,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lambda_square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">num</span><span class="p">:</span><span class="n">num</span><span class="o">**</span><span class="mi">2</span>
@@ -16879,7 +16791,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lambda_square</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -16895,7 +16807,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -16920,7 +16832,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rstr</span><span class="p">(</span><span class="n">df</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Cols unique values:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">unique</span><span class="p">()])))</span> 
@@ -16963,8 +16875,10 @@ dtype: object
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
+<p><br/></p>
+<p><hr></p>
+<p><hr>
+<br/></p>
 <p><code>apply()</code> is the equivalent mehtod if we want to transform a whole <code>DataFrame</code> by calling a custom method on each row. For example, lets define the mean_gdp function and then use it to transform our data.</p>
 
 </div>
@@ -16972,7 +16886,7 @@ dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remean_gdp</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -16987,7 +16901,7 @@ dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">port_gdp_data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remean_gdp</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
@@ -17003,7 +16917,7 @@ dtype: object
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[58]:</div>
+    <div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -17258,7 +17172,7 @@ dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">port_gdp_data</span><span class="o">.</span><span class="n">value</span>
@@ -17274,7 +17188,7 @@ dtype: object
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[59]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -17312,15 +17226,16 @@ Name: value, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Built in mapping operators in Pandas</strong></p>
-<p>For the most common operators we need not to use explicitly the <code>map()</code> method. For example, here is a faster way of remeaning our <code>value</code> column.</p>
+<p><br/></p>
+<h4 id="4.2.2-Built-in-mapping-operators-in-Pandas">4.2.2 <strong>Built in mapping operators in Pandas</strong><a class="anchor-link" href="#4.2.2-Built-in-mapping-operators-in-Pandas">&#182;</a></h4><p><br/>
+For the most common operators we need not to use explicitly the <code>map()</code> method. For example, here is a faster way of remeaning our <code>value</code> column.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">port_gdp_data</span><span class="o">.</span><span class="n">value</span><span class="o">-</span><span class="n">mean_gdp</span>
@@ -17336,7 +17251,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -17382,7 +17297,7 @@ Name: value, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
@@ -17398,7 +17313,7 @@ Name: value, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[61]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -17429,8 +17344,9 @@ Length: 59299, dtype: object</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the cell above I introduced the method <code>.astype()</code> to transform <code>Time</code> from an integer column to a string column.</p>
 <p>This needs to be done because Pandas can only concatenate a string with other string or equivalently can only add a number with other number. Both operations are performed with the same <code>+</code> operator.</p>
-<p>As final note, it is important to mention that performing this operators rather than using <code>map()</code> or <code>apply()</code> methods is faster because they use speed ups built into Pandas. Actualy, all of the standard Python operators (<code>&gt;</code>,<code>&lt;</code>,<code>==</code>,and so on) work in this manner.</p>
-<p>However, they are not as flexible as <code>map()</code> or <code>apply()</code>, which can do more advanced things, like applying conditional logic, which cannot be done with addition and substraction alone.</p>
+<div class="alert alert-block alert-info">
+    <b>Note:</b>  Performing this operators rather than using <code>map()</code> or <code>apply()</code> methods is faster because they use speed ups built into Pandas. Actualy, all of the standard Python operators (greater, lesser or equal than) work in this manner.
+</div><p>However, they are not as flexible as <code>map()</code> or <code>apply()</code>, which can do more advanced things, like applying conditional logic, which cannot be done with addition and substraction alone.</p>
 
 </div>
 </div>
@@ -17438,8 +17354,21 @@ Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Types-and-Missing-Values">Data Types and Missing Values<a class="anchor-link" href="#Data-Types-and-Missing-Values">&#182;</a></h2><p>At the end of the prior section we introduced an operator to modify the type a specific column. The correct name of the type of a column in a <code>DataFrame</code> (or <code>Series</code>) is <strong>dtype</strong>.</p>
-<h3 id="Data-Types">Data Types<a class="anchor-link" href="#Data-Types">&#182;</a></h3><p><strong>Specific Column</strong></p>
+<p><br/></p>
+<h2 id="6.-Data-Types-and-Missing-Values">6. <a href="#IV">Data Types and Missing Values</a><a class="anchor-link" href="#6.-Data-Types-and-Missing-Values">&#182;</a></h2><p><a id="IV"></a>
+<br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="6.1-Data-Types">6.1 <a href="#IV.I">Data Types</a><a class="anchor-link" href="#6.1-Data-Types">&#182;</a></h3><p><a id="IV.I"></a>
+<br/></p>
+<p>At the end of the prior section we introduced an operator to modify the type a specific column. The correct name of the type of a column in a <code>DataFrame</code> (or <code>Series</code>) is <strong>dtype</strong>.</p>
+<p><br/></p>
+<h4 id="6.1.1-Specific-Column">6.1.1 Specific Column<a class="anchor-link" href="#6.1.1-Specific-Column">&#182;</a></h4><p><br/></p>
 <p>So, you can use the <code>dtype</code> attribute of a <code>Series</code> to grab the type of a specific column. For instance, we can get the <code>dtype</code> of the <code>Time</code> column in our data.</p>
 
 </div>
@@ -17447,7 +17376,7 @@ Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">dtype</span>
@@ -17463,7 +17392,7 @@ Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -17481,15 +17410,16 @@ Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Every column in the dataset</strong></p>
-<p>Alternatively, the <code>dtypes</code> attribute of a <code>DataFrame</code> returns the <code>dtype</code>of <em>every</em> column.</p>
+<p><br/></p>
+<h4 id="6.1.2-Every-column-in-the-dataset">6.1.2 Every column in the dataset<a class="anchor-link" href="#6.1.2-Every-column-in-the-dataset">&#182;</a></h4><p><br/>
+Alternatively, the <code>dtypes</code> attribute of a <code>DataFrame</code> returns the <code>dtype</code>of <em>every</em> column.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
@@ -17505,7 +17435,7 @@ Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -17541,7 +17471,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dtype</span>
@@ -17557,7 +17487,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -17576,16 +17506,19 @@ dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As a final note to this section, let's remark that Pandas also supports more exoctic data types. For example, categorical data and timeseries data are also allowed.</p>
-<h3 id="Missing-data">Missing data<a class="anchor-link" href="#Missing-data">&#182;</a></h3><p>Entries with missing values are given the value NaN, short for "Not a Number". For technical reasons these <code>NaN</code> values are always of the <code>float64</code> dtype.</p>
-<p><strong>Selecting missing rows data</strong></p>
-<p>Pandas provides some methods specific to missing data. To select <code>NaN</code> entries you can use <code>pd.isnull()</code> (or its companion <code>pd.notnull()</code>). For example, lets output all the rows of our dataset that has <code>value</code> column with missing values.</p>
+<h3 id="6.2-Missing-data">6.2 <a href="#IV.II">Missing data</a><a class="anchor-link" href="#6.2-Missing-data">&#182;</a></h3><p><a id="IV.II"></a>
+<br/>
+Entries with missing values are given the value NaN, short for "Not a Number". For technical reasons these <code>NaN</code> values are always of the <code>float64</code> dtype.
+<br/></p>
+<h4 id="6.2.1-Selecting-missing-rows-data">6.2.1 Selecting missing rows data<a class="anchor-link" href="#6.2.1-Selecting-missing-rows-data">&#182;</a></h4><p><br/>
+Pandas provides some methods specific to missing data. To select <code>NaN</code> entries you can use <code>pd.isnull()</code> (or its companion <code>pd.notnull()</code>). For example, lets output all the rows of our dataset that has <code>value</code> column with missing values.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)]</span>
@@ -17601,7 +17534,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -17778,7 +17711,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
@@ -17794,7 +17727,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[66]:</div>
+    <div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -17830,7 +17763,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Continent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Continent</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -17853,7 +17786,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[67]:</div>
+    <div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -17871,16 +17804,23 @@ Name: value, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Renaming-and-Combining">Renaming and Combining<a class="anchor-link" href="#Renaming-and-Combining">&#182;</a></h2><p>Data comes often to us with column names, index names or other naming conventions that we are not satisfied with. In that case, we will learn how to use pandas functions to change the names of the entries we need to.</p>
-<p>We will also explore three methods to combine data from multiple <code>DataFame</code> and/or <code>Series</code>.</p>
-<h3 id="Renaming">Renaming<a class="anchor-link" href="#Renaming">&#182;</a></h3><p>The first function to introduce here is <code>rename()</code>, which allows you to change index names and/or column names. For example, to change the <code>value</code> column in our dataset to <code>Series Value</code>, we would do:</p>
+<p><br/></p>
+<h2 id="7.-Renaming-and-Combining">7. <a href="#IIV">Renaming and Combining</a><a class="anchor-link" href="#7.-Renaming-and-Combining">&#182;</a></h2><p><a id="IIV"></a>
+<br/>
+Data comes often to us with column names, index names or other naming conventions that we are not satisfied with. In that case, we will learn how to use pandas functions to change the names of the entries we need to.</p>
+<p>We will also explore three methods to combine data from multiple <code>DataFame</code> and/or <code>Series</code>.
+<br/></p>
+<h3 id="7.1-Renaming">7.1 <a href="#IIV.I">Renaming</a><a class="anchor-link" href="#7.1-Renaming">&#182;</a></h3><p><a id="IIV.I"></a>
+<br/>
+The first function to introduce here is <code>rename()</code>, which allows you to change index names and/or column names. For example, to change the <code>value</code> column in our dataset to <code>Series Value</code>, we would do:
+<br/></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Series Value&#39;</span><span class="p">})</span>
@@ -17896,7 +17836,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -18073,7 +18013,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#declare the set of column names to modify</span>
@@ -18099,7 +18039,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -18276,7 +18216,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;FirstRow&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;SecondRow&#39;</span><span class="p">})</span>
@@ -18292,7 +18232,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[70]:</div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -18462,16 +18402,17 @@ Name: value, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is very common to rename columns, but rename index values is very rarely. For doing so it is usually more convenient to use the <code>set_index()</code> method.</p>
-<p><strong>Renaming axis</strong></p>
-<p>Both rows and columns have their own name attribute. So, additionaly to renaming values of each axis  <code>rename_axis()</code> method may be used to change these name attribute (naming the hole rows or the hole columns). For example:</p>
+<p>It is very common to rename columns, but rename index values is very rarely. For doing so it is usually more convenient to use the <code>set_index()</code> method.
+<br/></p>
+<h4 id="7.1.1-Renaming-axis">7.1.1 Renaming axis<a class="anchor-link" href="#7.1.1-Renaming-axis">&#182;</a></h4><p><br/>
+Both rows and columns have their own name attribute. So, additionaly to renaming values of each axis  <code>rename_axis()</code> method may be used to change these name attribute (naming the hole rows or the hole columns). For example:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;Observations&quot;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;Features&quot;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
@@ -18487,7 +18428,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[71]:</div>
+    <div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -18668,7 +18609,10 @@ Name: value, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Combining">Combining<a class="anchor-link" href="#Combining">&#182;</a></h3><p>When working on a dataset, we will sometimes need to combine different <code>DataFrames</code> and/or <code>Series</code> in <em>non-trivial</em> ways. Pandas has three core methods for doing this. Ranked on increasing complexity, these methods are <code>concat()</code>, <code>join()</code>, and <code>merge()</code>.</p>
+<p><br/></p>
+<h3 id="7.2-Combining">7.2 <a href="#IIV.II">Combining</a><a class="anchor-link" href="#7.2-Combining">&#182;</a></h3><p><a id="IIV.II"></a>
+<br/></p>
+<p>When working on a dataset, we will sometimes need to combine different <code>DataFrames</code> and/or <code>Series</code> in <em>non-trivial</em> ways. Pandas has three core methods for doing this. Ranked on increasing complexity, these methods are <code>concat()</code>, <code>join()</code>, and <code>merge()</code>.</p>
 <p>As its name says, <code>concat()</code> will concatenate two <code>DataFrames</code> together along an axis. This method is very useful when working with data in different <code>DataFrames</code> or <code>Series</code> objects but having the same fields (columns) .</p>
 <p>For example imagine that we need to create a report with a subset of the available goverment data from Portugal of the period. The indicators that we need to present are the following:</p>
 <ul>
@@ -18689,7 +18633,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#First of all let&#39;s select only entries reported by Portugal</span>
@@ -18703,7 +18647,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Then let&#39;s set the conditions to select the data</span>
@@ -18720,7 +18664,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Then select and rename each series</span>
@@ -18737,7 +18681,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Finally let&#39;s concatenate all together</span>
@@ -18764,7 +18708,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[73]:</div>
 
 
 
@@ -18965,7 +18909,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">right</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Key&#39;</span><span class="p">:[</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2003</span><span class="p">],</span>
@@ -18989,7 +18933,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">right</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Key&#39;</span><span class="p">),</span><span class="n">lsuffix</span><span class="o">=</span><span class="s1">&#39;_Dolar&#39;</span><span class="p">,</span><span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_Euro&#39;</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Key&#39;</span><span class="p">)</span>
@@ -19005,7 +18949,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -19085,7 +19029,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Let&#39;s set the conditions to select the data</span>
@@ -19108,7 +19052,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_gov_view</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gdp_econ_view</span><span class="p">)</span>
@@ -19124,7 +19068,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[79]:</div>
+    <div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -19367,7 +19311,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_Dolar&#39;</span><span class="p">,</span><span class="s1">&#39;_Euro&#39;</span><span class="p">),</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Key&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -19383,7 +19327,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[80]:</div>
+    <div class="prompt output_prompt">Out[78]:</div>
 
 
 
@@ -19449,7 +19393,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">gdp_gov_view</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span><span class="n">gdp_econ_view</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="n">validate</span><span class="o">=</span><span class="s1">&#39;1:1&#39;</span><span class="p">)</span>
@@ -19465,7 +19409,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[81]:</div>
+    <div class="prompt output_prompt">Out[79]:</div>
 
 
 

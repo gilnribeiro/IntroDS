@@ -82,6 +82,6 @@ Below are the links that you can follow to go to the webpages of the courses tha
 
 For Windows users please note that it is only possible to download `xgboost` package by using a conda environment. 
 
-Unfortunately, `pip` comand doesn't work for Windows os in that specific package.
+Unfortunately, `pip` comand doesn't work in Windows os for that specific package.
 
 **Extras** is the only place where we will use that specific package.
