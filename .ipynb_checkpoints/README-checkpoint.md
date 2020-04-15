@@ -43,20 +43,12 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
-| Intro to ML | Logistic Regression | T&E | 30 min |
-| Machine Learning | Decision Tree | T&E | 60 min |
+| Intro to ML | Logistic Regression | T&E | 60 min |
 | Machine Learning | Base. mod., Perf. metr. & Cr. Val. | Theory | 60 min |
-| Machine Learning | Underfitting and Overfitting | T&E | 60 min |
-| Machine Learning | Random Forest | T&E | 60 min |
+| Machine Learning | Decision Tree | T&E | 60 min |
 
 
-#### Extras
 
-| General Topic | Single topics  | Type | Estimated time  |
-| :-----: | :-: | :-: | :-: |
-| Machine Learning | Gradient Boosting  (XGBoost) | T&E | 60 min |
-| Machine Learning | Magic Loop (compare dif. models) | T&E | 60 min |
-| Machine Learning | Artificial Neural Networks (ANN) | T&E | 60 min |
 
 
 ### About the information sources
@@ -76,12 +68,3 @@ Below are the links that you can follow to go to the webpages of the courses tha
 + XGBoost: [Hackernoon](https://hackernoon.com/want-a-complete-guide-for-xgboost-model-in-python-using-scikit-learn-sc11f31bq)
 + ANN: [Medium](https://medium.com/@sanchittanwar75/introduction-to-neural-networks-660f6909fba9)
 
-### Installation
-
-`pip install -r requirements.txt`
-
-For Windows users please note that it is only possible to download `xgboost` package by using a conda environment. 
-
-Unfortunately, `pip` comand doesn't work in Windows os for that specific package.
-
-**Extras** is the only place where we will use that specific package.
