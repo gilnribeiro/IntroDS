@@ -13084,24 +13084,27 @@ div#notebook {
 <li><a href="#0">Setup</a><br></li>
 <li><a href="#I">About Pandas</a><br></li>
 <li><a href="#II">Creating &amp; Reading</a><br>
- 2.1 <a href="#II.I">Creating data</a><br>
- 2.2 <a href="#II.II">Reading data</a><br></li>
+ 3.1 <a href="#II.I">Creating data</a><br>
+ 3.2 <a href="#II.II">Reading data</a><br></li>
 <li><a href="#III">Indexing, Selecting and Assigning</a><br>
- 3.1 <a href="#III.I">Naitive Python accessors</a><br>
- 3.2 <a href="#III.II">Indexing using Pandas syntaxis</a><br>
- 3.3 <a href="#III.III">Manipulating the index</a><br>
- 3.4 <a href="#III.VI">Conditional Selection</a><br>
- 3.5 <a href="#III.V">Assigning data</a><br></li>
-<li><a href="#VI">Summary Functions and Maps</a>
- 4.1 <a href="#VI.I">Summary functions</a>
- 4.2 <a href="#VI.II">Maps</a></li>
-<li><a href="#V">Grouping and Sorting</a></li>
-<li><a href="#IV">Data Types and Missing Values</a>
- 6.1 <a href="#IV.I">Data Types</a>
- 6.2 <a href="#IV.II">Missing data</a></li>
-<li><a href="#IIV">Renaming and Combining</a>
- 7.1 <a href="#IIV.I">Renaming</a>
- 7.2 <a href="#IIV.II">Combining</a></li>
+ 4.1 <a href="#III.I">Naitive Python accessors</a><br>
+ 4.2 <a href="#III.II">Indexing using Pandas syntaxis</a><br>
+ 4.3 <a href="#III.III">Manipulating the index</a><br>
+ 4.4 <a href="#III.VI">Conditional Selection</a><br>
+ 4.5 <a href="#III.V">Assigning data</a><br></li>
+<li><a href="#VI">Summary Functions and Maps</a><br>
+ 5.1 <a href="#VI.I">Summary functions</a><br>
+ 5.2 <a href="#VI.II">Maps</a><br></li>
+<li><a href="#V">Grouping and Sorting</a><br></li>
+<li><a href="#IV">Data Types and Missing Values</a><br>
+ 7.1 <a href="#IV.I">Data Types</a><br>
+ 7.2 <a href="#IV.II">Missing data</a><br></li>
+<li><a href="#IIV">Renaming and Combining</a><br>
+ 8.1 <a href="#IIV.I">Renaming</a><br>
+ 8.2 <a href="#IIV.II">Combining</a><br>
+<br/>
+<br/>
+<br/></li>
 </ol>
 
 </div>
@@ -15091,7 +15094,7 @@ Name: Continent, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="3.4-Conditional-Selection">3.4 <a href="#III.IV">Conditional Selection</a><a class="anchor-link" href="#3.4-Conditional-Selection">&#182;</a></h3><p><a id="III.VI"></a></p>
+<h3 id="3.4-Conditional-Selection">3.4 <a href="#III.VI">Conditional Selection</a><a class="anchor-link" href="#3.4-Conditional-Selection">&#182;</a></h3><p><a id="III.VI"></a></p>
 <p><br/></p>
 <p>This type of selection works well for <strong>asking interesting questions</strong> to our data. In particular, it helps to <em>ask</em> questions based on conditions.</p>
 <p>For example, suppose that for some reason we are interested in all european countries that have an average GDP of the period higher than 1,000,000,000,000 (or $10^{12}$).</p>
@@ -17368,6 +17371,13 @@ Length: 59299, dtype: object</pre>
 <br/></p>
 <p>At the end of the prior section we introduced an operator to modify the type a specific column. The correct name of the type of a column in a <code>DataFrame</code> (or <code>Series</code>) is <strong>dtype</strong>.</p>
 <p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="6.1.1-Specific-Column">6.1.1 Specific Column<a class="anchor-link" href="#6.1.1-Specific-Column">&#182;</a></h4><p><br/></p>
 <p>So, you can use the <code>dtype</code> attribute of a <code>Series</code> to grab the type of a specific column. For instance, we can get the <code>dtype</code> of the <code>Time</code> column in our data.</p>
 
