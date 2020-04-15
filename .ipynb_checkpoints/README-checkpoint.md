@@ -33,20 +33,19 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
-| Visualization | plotnine “The grammar of graphics” | T&E | 30 min |
 | Intro to ML | Missing Values | T&E | 30 min |
 | Intro to ML | Categorical Variables | T&E | 30 min |
-
+| Visualization | plotnine “The grammar of graphics” | T&E | 60 min |
+| Intro to ML | Logistic Regression | T&E | 60 min |
 
 
 #### May 6
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
-| Intro to ML | Logistic Regression | T&E | 60 min |
 | Machine Learning | Base. mod., Perf. metr. & Cr. Val. | Theory | 60 min |
 | Machine Learning | Decision Tree | T&E | 60 min |
-
+| Machine Learning | Underfitting and Overfitting | T&E | 60 min |
 
 
 
