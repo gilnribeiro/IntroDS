@@ -13113,7 +13113,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="0.-Setup">0. <a href="#0">Setup</a><a class="anchor-link" href="#0.-Setup">&#182;</a></h2><p><a id="0"></a>
+<h2 id="1.-Setup">1. <a href="#0">Setup</a><a class="anchor-link" href="#1.-Setup">&#182;</a></h2><p><a id="0"></a>
 <br/></p>
 <p>To see where is the <em>current working directory</em> for this specific <code>jupyter notebook</code> we leverage the method <code>getcwd()</code> from package <code>os</code></p>
 
@@ -13122,7 +13122,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -13133,6 +13133,26 @@ div#notebook {
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;C:\\Users\\eduar\\Documents\\BackUp\\Classes\\IntroProgrammingNovaSBE2019\\IntroDS&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13174,7 +13194,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-About-pandas">1. <a href="#I">About pandas</a><a class="anchor-link" href="#1.-About-pandas">&#182;</a></h2><p><a id="I"></a>
+<h2 id="2.-About-pandas">2. <a href="#I">About pandas</a><a class="anchor-link" href="#2.-About-pandas">&#182;</a></h2><p><a id="I"></a>
 <br/></p>
 <p>The most popular <code>Python</code> library for data analysis is <code>pandas</code>. In this part we will learn how to create our own data, along with how to work with data that already exists (i.e. how to import it to <code>Python</code>). To use <code>pandas</code> you will typically start with the following line of code.</p>
 
@@ -13205,7 +13225,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Creating-&amp;-Reading-data">2. <a href="#II">Creating &amp; Reading data</a><a class="anchor-link" href="#2.-Creating-&amp;-Reading-data">&#182;</a></h2><p><a id="II"></a>
+<h2 id="3.-Creating-&amp;-Reading-data">3. <a href="#II">Creating &amp; Reading data</a><a class="anchor-link" href="#3.-Creating-&amp;-Reading-data">&#182;</a></h2><p><a id="II"></a>
 <br/></p>
 
 </div>
@@ -13214,11 +13234,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.1-Creating-data">2.1 <a href="#II.I">Creating data</a><a class="anchor-link" href="#2.1-Creating-data">&#182;</a></h3><p><a id="II.I"></a>
+<h3 id="3.1-Creating-data">3.1 <a href="#II.I">Creating data</a><a class="anchor-link" href="#3.1-Creating-data">&#182;</a></h3><p><a id="II.I"></a>
 <br/></p>
 <p>There are two core objects in pandas: the <code>DataFrame</code> and the <code>Series</code>.
 <br/></p>
-<h4 id="2.1.1-DataFrame">2.1.1 <code>DataFrame</code><a class="anchor-link" href="#2.1.1-DataFrame">&#182;</a></h4><hr>
+<h4 id="3.1.1-DataFrame">3.1.1 <code>DataFrame</code><a class="anchor-link" href="#3.1.1-DataFrame">&#182;</a></h4><hr>
 
 <p>A <code>DataFrame</code>is a table that contains and array of individual entries, each of which has a certain value. Each entry corresponds to a row (or record) and a column.</p>
 <p>As an example let's generate our first <code>DataFrame</code>. For this we will need to declare a <code>dictionary</code> and then feed it to the <code>pandas</code> method <code>DataFrame()</code>.</p>
@@ -13469,7 +13489,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h5 id="2.1.2-Series">2.1.2 <code>Series</code><a class="anchor-link" href="#2.1.2-Series">&#182;</a></h5><hr>
+<h5 id="3.1.2-Series">3.1.2 <code>Series</code><a class="anchor-link" href="#3.1.2-Series">&#182;</a></h5><hr>
 
 <p>A <code>Series</code> is a sequence of data values. If a <code>DataFrame</code> is a <strong>table</strong>, a <code>Series</code> is a <strong>list</strong>, both with special methods and constructors than the ones available by using the <code>Matrix</code> (two-dimensional array) and <code>list</code> data structures. So, it is possible to generate a <code>pandas</code> <code>Series</code> with nothing more than a list, for example:</p>
 
@@ -13572,7 +13592,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="2.2-Reading-data">2.2 <a href="#II.II">Reading data</a><a class="anchor-link" href="#2.2-Reading-data">&#182;</a></h3><p><a id="II.II"></a></p>
+<h3 id="3.2-Reading-data">3.2 <a href="#II.II">Reading data</a><a class="anchor-link" href="#3.2-Reading-data">&#182;</a></h3><p><a id="II.II"></a></p>
 <p><br/></p>
 <p>Data can be stored in any of a number of different forms and formats. By far the most basic format is the CSV file or <em>Comma-Separated Values</em>. The function from pandas that will allow us to read this format to Python is <code>read_csv()</code>. Now, lets read our example database using <code>read_csv()</code> function.</p>
 
@@ -14314,7 +14334,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h2 id="3.-Indexing,-Selecting-and-Assigning">3. <a href="#III">Indexing, Selecting and Assigning</a><a class="anchor-link" href="#3.-Indexing,-Selecting-and-Assigning">&#182;</a></h2><p><a id="III"></a>
+<h2 id="4.-Indexing,-Selecting-and-Assigning">4. <a href="#III">Indexing, Selecting and Assigning</a><a class="anchor-link" href="#4.-Indexing,-Selecting-and-Assigning">&#182;</a></h2><p><a id="III"></a>
 <br/></p>
 <p>Selecting specific values of a pandas <code>DataFrame</code> or <code>Series</code> to work on is an implicit step in almost any data operation you'll run, so one of the first things you need to learn in working with data in Python is how to go about selecting the data points relevant to you quickly and effectively.</p>
 <p><br/></p>
@@ -14325,7 +14345,7 @@ Name: Vendas de pasteis de Nata, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.1-Naitive-Python-accessors">3.1 <a href="#III.I">Naitive Python accessors</a><a class="anchor-link" href="#3.1-Naitive-Python-accessors">&#182;</a></h3><p><a id="III.I"></a>
+<h3 id="4.1-Naitive-Python-accessors">4.1 <a href="#III.I">Naitive Python accessors</a><a class="anchor-link" href="#4.1-Naitive-Python-accessors">&#182;</a></h3><p><a id="III.I"></a>
 <br/></p>
 <p>Native Python objects provide good ways of indexing data. Pandas carries all of these over, which helps make it easy to start with.</p>
 <p>In Python, we can access the property of an object by accessing it as an attribute. A <code>book</code> object, for example, might have a <code>title</code> property, which we can access by calling <code>book.title</code>. <strong>Columns in a pandas</strong> <code>DataFrame</code> <strong>work in much the same way</strong>.</p>
@@ -14642,7 +14662,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="3.2-Indexing-using-pandas-syntaxis">3.2 <a href="#III.II">Indexing using pandas syntaxis</a><a class="anchor-link" href="#3.2-Indexing-using-pandas-syntaxis">&#182;</a></h3><p><a id="III.II"></a>
+<h3 id="4.2-Indexing-using-pandas-syntaxis">4.2 <a href="#III.II">Indexing using pandas syntaxis</a><a class="anchor-link" href="#4.2-Indexing-using-pandas-syntaxis">&#182;</a></h3><p><a id="III.II"></a>
 <br/></p>
 <p>Pandas has its own accessor operatos, <code>loc[ ]</code> and <code>iloc[ ]</code>. For more advanced operations, these are the ones you are supposed to be using.</p>
 <p><br/></p>
@@ -14653,7 +14673,7 @@ Name: Continent, Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.2.1-Index-based-selection-iloc[-]">3.2.1 Index-based selection <code>iloc[ ]</code><a class="anchor-link" href="#3.2.1-Index-based-selection-iloc[-]">&#182;</a></h4><p><br/></p>
+<h4 id="4.2.1-Index-based-selection-iloc[-]">4.2.1 Index-based selection <code>iloc[ ]</code><a class="anchor-link" href="#4.2.1-Index-based-selection-iloc[-]">&#182;</a></h4><p><br/></p>
 <p>In pandas we have two paradigms for indexing. The first one we will review is the <strong>index-based selection</strong>. This simply means that we will be selecting data based on its numerical position in the <code>DataFrame</code> (as we did when we review <code>list</code>s). For this first paradigm we use the method <code>iloc[]</code>.</p>
 <p>To select the <strong>first row</strong> of our data <code>DataFrame</code>, we can do the follwoing.</p>
 
@@ -15011,7 +15031,7 @@ Name: Continent, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h4 id="3.2.2-Label-based-selection-loc[-]">3.2.2 Label-based selection <code>loc[ ]</code><a class="anchor-link" href="#3.2.2-Label-based-selection-loc[-]">&#182;</a></h4><p><br/></p>
+<h4 id="4.2.2-Label-based-selection-loc[-]">4.2.2 Label-based selection <code>loc[ ]</code><a class="anchor-link" href="#4.2.2-Label-based-selection-loc[-]">&#182;</a></h4><p><br/></p>
 <p>The second paradigm in pandas accesses to <code>DataFrame</code>s is the one followed by the <code>loc[ ]</code> method. In this paradigm, it's the data <strong>index value</strong>, not its position, which matters.</p>
 <p>For example, as befor lets address the first observation fo the column <code>Continent</code>.</p>
 <p><br/></p>
@@ -15069,7 +15089,7 @@ Name: Continent, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.3-Manipulating-the-index">3.3 <a href="#III.III">Manipulating the index</a><a class="anchor-link" href="#3.3-Manipulating-the-index">&#182;</a></h3><p><a id="III.III"></a></p>
+<h3 id="4.3-Manipulating-the-index">4.3 <a href="#III.III">Manipulating the index</a><a class="anchor-link" href="#4.3-Manipulating-the-index">&#182;</a></h3><p><a id="III.III"></a></p>
 <p><br/></p>
 <p>Label-based selection dervies its power from the lables in the index. So, we can manipulate the index in any way we see fit by using the method <code>set_index()</code>.</p>
 <p>For example, lets reset the index of our data. Remember that when first imported it we set the column <code>Time</code> as the new index.</p>
@@ -15094,7 +15114,7 @@ Name: Continent, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="3.4-Conditional-Selection">3.4 <a href="#III.VI">Conditional Selection</a><a class="anchor-link" href="#3.4-Conditional-Selection">&#182;</a></h3><p><a id="III.VI"></a></p>
+<h3 id="4.4-Conditional-Selection">4.4 <a href="#III.VI">Conditional Selection</a><a class="anchor-link" href="#4.4-Conditional-Selection">&#182;</a></h3><p><a id="III.VI"></a></p>
 <p><br/></p>
 <p>This type of selection works well for <strong>asking interesting questions</strong> to our data. In particular, it helps to <em>ask</em> questions based on conditions.</p>
 <p>For example, suppose that for some reason we are interested in all european countries that have an average GDP of the period higher than 1,000,000,000,000 (or $10^{12}$).</p>
@@ -16118,7 +16138,7 @@ Name: value, Length: 779, dtype: bool</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.5-Assigning-data">3.5 <a href="#III.V">Assigning data</a><a class="anchor-link" href="#3.5-Assigning-data">&#182;</a></h3><p><a id="III.V"></a></p>
+<h3 id="4.5-Assigning-data">4.5 <a href="#III.V">Assigning data</a><a class="anchor-link" href="#4.5-Assigning-data">&#182;</a></h3><p><a id="III.V"></a></p>
 <p><br/></p>
 <p>Assigning data to a <code>Series</code> of column of a <code>DataFrame</code> is easy. It is possible to assign either a constant value:</p>
 
@@ -16249,7 +16269,7 @@ to stop (exclusive) by step. The second one simply returns the number of items i
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Summary-Functions-and-Maps">4. <a href="#VI">Summary Functions and Maps</a><a class="anchor-link" href="#4.-Summary-Functions-and-Maps">&#182;</a></h2><p><a id="VI"></a>
+<h2 id="5.-Summary-Functions-and-Maps">5. <a href="#VI">Summary Functions and Maps</a><a class="anchor-link" href="#5.-Summary-Functions-and-Maps">&#182;</a></h2><p><a id="VI"></a>
 <br/></p>
 <p>As data does not always come out of memory in the format we want it. Sometimes we need to do some more work ourselves to reformat it for the task at hand. In this section, we will be covering different opeartions that we can apply to our data to get the input "just right" for our models, presentations and so on. First lets see a group of functions that are usually and informally called <em>summary functions</em>.</p>
 <p><br/></p>
@@ -16260,7 +16280,7 @@ to stop (exclusive) by step. The second one simply returns the number of items i
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.1-Summary-functions">4.1 <a href="#VI.I">Summary functions</a><a class="anchor-link" href="#4.1-Summary-functions">&#182;</a></h3><p><a id="VI.I"></a>
+<h3 id="5.1-Summary-functions">5.1 <a href="#VI.I">Summary functions</a><a class="anchor-link" href="#5.1-Summary-functions">&#182;</a></h3><p><a id="VI.I"></a>
 <br/></p>
 <p>Pandas provides many simple <em>summary functions</em> which helps when you need to restructure your data in some useful way. For example, consider the <code>.describe()</code> method.</p>
 
@@ -16340,10 +16360,10 @@ Name: value, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>count      59242
-unique        43
-top       Turkey
-freq        1444
+<pre>count     59242
+unique       43
+top       Italy
+freq       1444
 Name: Country Name, dtype: object</pre>
 </div>
 
@@ -16465,7 +16485,7 @@ memory usage: 3.4+ MB
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will return on talking about null values and columns types in a while.</p>
 <p><br/></p>
-<h4 id="4.1.1-Finding-unique-values">4.1.1 Finding unique values<a class="anchor-link" href="#4.1.1-Finding-unique-values">&#182;</a></h4><p><br/></p>
+<h4 id="5.1.1-Finding-unique-values">5.1.1 Finding unique values<a class="anchor-link" href="#5.1.1-Finding-unique-values">&#182;</a></h4><p><br/></p>
 <p>To see a list of unique values we can use the <code>.unique()</code> function.</p>
 <p>For example let's see the list of countries that this extraction has.</p>
 
@@ -16519,7 +16539,7 @@ memory usage: 3.4+ MB
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h4 id="4.1.2-Counting-unique-values">4.1.2 Counting unique values<a class="anchor-link" href="#4.1.2-Counting-unique-values">&#182;</a></h4><p><br/></p>
+<h4 id="5.1.2-Counting-unique-values">5.1.2 Counting unique values<a class="anchor-link" href="#5.1.2-Counting-unique-values">&#182;</a></h4><p><br/></p>
 <p>To see a list of values and how often they occur in a data set we can use <code>value_counts()</code> method. For example, let's see how many observations per year we have.</p>
 
 </div>
@@ -16581,7 +16601,7 @@ Name: Time, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="4.2-Maps">4.2 <a href="#VI.II">Maps</a><a class="anchor-link" href="#4.2-Maps">&#182;</a></h3><p><a id="VI.II"></a>
+<h3 id="5.2-Maps">5.2 <a href="#VI.II">Maps</a><a class="anchor-link" href="#5.2-Maps">&#182;</a></h3><p><a id="VI.II"></a>
 <br/>
 A <strong>map</strong> is a term borrowed from mathematics. It can be seen as a function that takes one set of values and "maps" them to another set of values. In data science we often need to create new representations from existing data, or transform data from the format we recieve it (for example from our operations team) to the format we want it to be later for models or business presentations. Maps are what handle this type of work.</p>
 <p>There are two mapping methods that you will often use.</p>
@@ -16669,7 +16689,7 @@ Name: value, dtype: float64</pre>
 <br/></p>
 <hr>
 
-<h4 id="4.2.1-Quick-review-about-Python's-lambda-expression">4.2.1 Quick review about Python's lambda expression<a class="anchor-link" href="#4.2.1-Quick-review-about-Python's-lambda-expression">&#182;</a></h4><p><hr>
+<h4 id="5.2.1-Quick-review-about-Python's-lambda-expression">5.2.1 Quick review about Python's lambda expression<a class="anchor-link" href="#5.2.1-Quick-review-about-Python's-lambda-expression">&#182;</a></h4><p><hr>
 <br/>
 Lambda expressions allow us to create "anonymous" functions. This basically means we can quickly make ad-hoc functions without needing to properly define a function using def.</p>
 <p>Function objects returned by running lambda expressions work exactly the same as those created and assigned by <code>def</code>s. There is a key difference that makes lambda useful in specialized roles. Pandas library works very well with lambda expressions.</p>
@@ -17230,7 +17250,7 @@ Name: value, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h4 id="4.2.2-Built-in-mapping-operators-in-Pandas">4.2.2 <strong>Built in mapping operators in Pandas</strong><a class="anchor-link" href="#4.2.2-Built-in-mapping-operators-in-Pandas">&#182;</a></h4><p><br/>
+<h4 id="5.2.2-Built-in-mapping-operators-in-Pandas">5.2.2 <strong>Built in mapping operators in Pandas</strong><a class="anchor-link" href="#5.2.2-Built-in-mapping-operators-in-Pandas">&#182;</a></h4><p><br/>
 For the most common operators we need not to use explicitly the <code>map()</code> method. For example, here is a faster way of remeaning our <code>value</code> column.</p>
 
 </div>
@@ -17358,7 +17378,7 @@ Length: 59299, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h2 id="6.-Data-Types-and-Missing-Values">6. <a href="#IV">Data Types and Missing Values</a><a class="anchor-link" href="#6.-Data-Types-and-Missing-Values">&#182;</a></h2><p><a id="IV"></a>
+<h2 id="6.-Grouping-and-Sorting">6. <a href="#V">Grouping and Sorting</a><a class="anchor-link" href="#6.-Grouping-and-Sorting">&#182;</a></h2><p><a id="V"></a>
 <br/></p>
 
 </div>
@@ -17367,7 +17387,981 @@ Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="6.1-Data-Types">6.1 <a href="#IV.I">Data Types</a><a class="anchor-link" href="#6.1-Data-Types">&#182;</a></h3><p><a id="IV.I"></a>
+<h3 id="6.1-Grouping">6.1 <a href="#V.I">Grouping</a><a class="anchor-link" href="#6.1-Grouping">&#182;</a></h3><p><a id="V.I"></a>
+<br/></p>
+<p>Most data operations are done on groups defined by variables for creating them pandas <code>DataFrame</code>s have the method <code>groupby()</code>. The way it generally works is as follows:</p>
+<ol>
+<li>Define the <em>groups</em> based on a set of columns in your data</li>
+<li>Summarize the information of other columns at the grouped level</li>
+</ol>
+<p>For the second step the method you will need to use is <code>agg()</code>, this method will allow you to summarize a set of columns each of them with a specific summary function. The structure of the command is presented in the image below:
+<br/></p>
+<p align="center">
+  <img width="820" height="500" src="https://shanelynnwebsite-mid9n9g1q9y8tt.netdna-ssl.com/wp-content/uploads/2019/10/pandas-python-group-by-named-aggregation-update.jpg">
+</p><p><br/></p>
+<p>Now, let's make a simple table with summary statistcis of our data</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Series Name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;GDP per capita (constant 2010 US$)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span>
+                                                                        <span class="s1">&#39;Country Name&#39;</span><span class="p">,</span>
+                                                                        <span class="s1">&#39;Series Name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">Average</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+                                                                                            <span class="n">Standard_Deviation</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;std&#39;</span><span class="p">),</span>
+                                                                                            <span class="n">Min_Value</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">),</span>
+                                                                                           <span class="n">Max_Value</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">))</span><span class="c1">#.reset_index()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Average</th>
+      <th>Standard_Deviation</th>
+      <th>Min_Value</th>
+      <th>Max_Value</th>
+    </tr>
+    <tr>
+      <th>Continent</th>
+      <th>Country Name</th>
+      <th>Series Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Africa</td>
+      <td>Sub-Saharan Africa</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>1481.155884</td>
+      <td>166.462302</td>
+      <td>1201.349510</td>
+      <td>1679.700986</td>
+    </tr>
+    <tr>
+      <td rowspan="5" valign="top">America</td>
+      <td>Brazil</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>10376.616469</td>
+      <td>1128.515134</td>
+      <td>8776.858300</td>
+      <td>11912.144552</td>
+    </tr>
+    <tr>
+      <td>Chile</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>12485.716332</td>
+      <td>1970.224018</td>
+      <td>9469.110468</td>
+      <td>15059.530141</td>
+    </tr>
+    <tr>
+      <td>Latin America &amp; Caribbean</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>8578.212505</td>
+      <td>837.566481</td>
+      <td>7344.747219</td>
+      <td>9547.935423</td>
+    </tr>
+    <tr>
+      <td>Mexico</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>9234.971699</td>
+      <td>378.967887</td>
+      <td>8712.140597</td>
+      <td>9942.866356</td>
+    </tr>
+    <tr>
+      <td>United States</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>48932.933550</td>
+      <td>2469.756582</td>
+      <td>45047.487198</td>
+      <td>53356.233648</td>
+    </tr>
+    <tr>
+      <td rowspan="4" valign="top">Asia</td>
+      <td>China</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>4174.178772</td>
+      <td>1828.468836</td>
+      <td>1771.741506</td>
+      <td>7329.089299</td>
+    </tr>
+    <tr>
+      <td>Japan</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>44801.711300</td>
+      <td>1947.805863</td>
+      <td>42169.733284</td>
+      <td>48567.417060</td>
+    </tr>
+    <tr>
+      <td>Korea, Rep.</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>20834.854427</td>
+      <td>3453.741905</td>
+      <td>15104.521518</td>
+      <td>26152.030775</td>
+    </tr>
+    <tr>
+      <td>South Asia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>1206.076090</td>
+      <td>310.516860</td>
+      <td>802.166527</td>
+      <td>1796.159418</td>
+    </tr>
+    <tr>
+      <td rowspan="26" valign="top">Europe</td>
+      <td>Austria</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>46149.917687</td>
+      <td>2369.899444</td>
+      <td>42001.211163</td>
+      <td>49190.173414</td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>43576.850587</td>
+      <td>1859.654970</td>
+      <td>40170.418927</td>
+      <td>46169.062471</td>
+    </tr>
+    <tr>
+      <td>Czech Republic</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>19004.468165</td>
+      <td>2345.649464</td>
+      <td>14806.583470</td>
+      <td>22754.752604</td>
+    </tr>
+    <tr>
+      <td>Denmark</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>58781.679393</td>
+      <td>2014.335995</td>
+      <td>55850.636430</td>
+      <td>62356.751713</td>
+    </tr>
+    <tr>
+      <td>Estonia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>15258.712693</td>
+      <td>2694.982415</td>
+      <td>10108.205291</td>
+      <td>19257.476166</td>
+    </tr>
+    <tr>
+      <td>European Union</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>33552.616912</td>
+      <td>1778.373430</td>
+      <td>30278.763586</td>
+      <td>36735.228314</td>
+    </tr>
+    <tr>
+      <td>Finland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>45378.028334</td>
+      <td>2474.236625</td>
+      <td>40450.373375</td>
+      <td>49363.697196</td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>40695.245168</td>
+      <td>1220.428239</td>
+      <td>38460.682101</td>
+      <td>42838.065937</td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>41889.348534</td>
+      <td>3067.162476</td>
+      <td>37998.425312</td>
+      <td>46971.407630</td>
+    </tr>
+    <tr>
+      <td>Greece</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>25501.863791</td>
+      <td>2779.273247</td>
+      <td>22251.257292</td>
+      <td>30054.889388</td>
+    </tr>
+    <tr>
+      <td>Hungary</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>13183.606528</td>
+      <td>1357.976231</td>
+      <td>10490.350317</td>
+      <td>15695.697944</td>
+    </tr>
+    <tr>
+      <td>Iceland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>43528.379355</td>
+      <td>4244.833128</td>
+      <td>36554.657520</td>
+      <td>50998.176901</td>
+    </tr>
+    <tr>
+      <td>Ireland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>53111.037367</td>
+      <td>8754.161228</td>
+      <td>42945.225922</td>
+      <td>74498.386272</td>
+    </tr>
+    <tr>
+      <td>Italy</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>35973.047661</td>
+      <td>1437.309553</td>
+      <td>33615.971782</td>
+      <td>38236.795611</td>
+    </tr>
+    <tr>
+      <td>Latvia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>11715.631084</td>
+      <td>2567.091699</td>
+      <td>6934.722926</td>
+      <td>15532.225029</td>
+    </tr>
+    <tr>
+      <td>Lithuania</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>12051.931772</td>
+      <td>2978.954615</td>
+      <td>6933.587869</td>
+      <td>16838.543200</td>
+    </tr>
+    <tr>
+      <td>Luxembourg</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>103053.423196</td>
+      <td>4956.205092</td>
+      <td>93462.924846</td>
+      <td>111968.349481</td>
+    </tr>
+    <tr>
+      <td>Netherlands</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>49873.875819</td>
+      <td>2423.458097</td>
+      <td>46133.176346</td>
+      <td>53920.033346</td>
+    </tr>
+    <tr>
+      <td>Norway</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>87898.970633</td>
+      <td>2974.410936</td>
+      <td>81709.662940</td>
+      <td>91617.279152</td>
+    </tr>
+    <tr>
+      <td>Poland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>11834.958740</td>
+      <td>2375.439903</td>
+      <td>8525.139502</td>
+      <td>15823.010798</td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>22064.437118</td>
+      <td>551.953640</td>
+      <td>21228.089483</td>
+      <td>23197.446785</td>
+    </tr>
+    <tr>
+      <td>Slovak Republic</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>15367.124257</td>
+      <td>3094.163534</td>
+      <td>10296.714183</td>
+      <td>19882.484492</td>
+    </tr>
+    <tr>
+      <td>Slovenia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>22617.964777</td>
+      <td>2073.978453</td>
+      <td>18570.696068</td>
+      <td>25666.885744</td>
+    </tr>
+    <tr>
+      <td>Spain</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>30555.549142</td>
+      <td>1228.890140</td>
+      <td>28335.001833</td>
+      <td>32459.917376</td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>51223.263502</td>
+      <td>3648.531691</td>
+      <td>44693.736597</td>
+      <td>56610.684988</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>39580.994862</td>
+      <td>1951.731031</td>
+      <td>35576.766847</td>
+      <td>42692.564069</td>
+    </tr>
+    <tr>
+      <td rowspan="3" valign="top">Middle East</td>
+      <td>Israel</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>30014.855494</td>
+      <td>2687.377573</td>
+      <td>26229.399767</td>
+      <td>34333.132338</td>
+    </tr>
+    <tr>
+      <td>Middle East &amp; North Africa</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>6835.049568</td>
+      <td>707.258456</td>
+      <td>5707.944854</td>
+      <td>7752.261984</td>
+    </tr>
+    <tr>
+      <td>Turkey</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>10883.868372</td>
+      <td>2256.163416</td>
+      <td>7631.651692</td>
+      <td>14936.401761</td>
+    </tr>
+    <tr>
+      <td>Oceania</td>
+      <td>New Zealand</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>33787.724182</td>
+      <td>2495.807254</td>
+      <td>28972.976242</td>
+      <td>37776.009741</td>
+    </tr>
+    <tr>
+      <td>World</td>
+      <td>World</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>9381.337588</td>
+      <td>780.587403</td>
+      <td>8189.458707</td>
+      <td>10657.782022</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are aggregation functions already predifined by pandas below you can see a <strong>non-exhaustive</strong> list of them:</p>
+<table>
+<thead><tr>
+<th style="text-align:center">Function</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">Number of non-null observations</td>
+</tr>
+<tr>
+<td style="text-align:center">sum</td>
+<td style="text-align:center">Sum of values</td>
+</tr>
+<tr>
+<td style="text-align:center">mean</td>
+<td style="text-align:center">Mean of values</td>
+</tr>
+<tr>
+<td style="text-align:center">mad</td>
+<td style="text-align:center">Mean absolute deviation</td>
+</tr>
+<tr>
+<td style="text-align:center">median</td>
+<td style="text-align:center">Arithmetic median of values</td>
+</tr>
+<tr>
+<td style="text-align:center">min</td>
+<td style="text-align:center">Minimum</td>
+</tr>
+<tr>
+<td style="text-align:center">max</td>
+<td style="text-align:center">Maximum</td>
+</tr>
+<tr>
+<td style="text-align:center">mode</td>
+<td style="text-align:center">Mode</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">Absolute Value</td>
+</tr>
+<tr>
+<td style="text-align:center">prod</td>
+<td style="text-align:center">Product of values</td>
+</tr>
+<tr>
+<td style="text-align:center">var</td>
+<td style="text-align:center">Unbiased variance</td>
+</tr>
+<tr>
+<td style="text-align:center">sem</td>
+<td style="text-align:center">Unbiased standard error of the mean</td>
+</tr>
+<tr>
+<td style="text-align:center">skew</td>
+<td style="text-align:center">Unbiased skewness (3rd moment)</td>
+</tr>
+<tr>
+<td style="text-align:center">kurt</td>
+<td style="text-align:center">Unbiased kurtosis (4th moment)</td>
+</tr>
+<tr>
+<td style="text-align:center">quantile</td>
+<td style="text-align:center">Sample quantile (value at %)</td>
+</tr>
+<tr>
+<td style="text-align:center">cumsum</td>
+<td style="text-align:center">Cumulative sum</td>
+</tr>
+<tr>
+<td style="text-align:center">cumprod</td>
+<td style="text-align:center">Sample quantile (value at %)</td>
+</tr>
+<tr>
+<td style="text-align:center">quantile</td>
+<td style="text-align:center">Cumulative product</td>
+</tr>
+<tr>
+<td style="text-align:center">cummax</td>
+<td style="text-align:center">Cumulative maximum</td>
+</tr>
+<tr>
+<td style="text-align:center">cummin</td>
+<td style="text-align:center">Cumulative minimum</td>
+</tr>
+</tbody>
+</table>
+<p>Note that it is also possible to create your own aggregation functions. However, the need for custom functions is minimal unless you have very specific requirements. The full range of basic statistics that are quickly calculable and built into the base Pandas package can be found <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html">here</a></p>
+<p><br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="6.2-Sorting">6.2 <a href="#V.I">Sorting</a><a class="anchor-link" href="#6.2-Sorting">&#182;</a></h3><p><a id="V.II"></a>
+<br/></p>
+<p>Now, imagine you need to sort in a descending way the results shown above. By using the <code>DataFrame</code> method <code>sort_values()</code> and selecting the parameter <code>ascending=False</code> this process can be easily performed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Series Name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;GDP per capita (constant 2010 US$)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span>
+                                                                        <span class="s1">&#39;Country Name&#39;</span><span class="p">,</span>
+                                                                        <span class="s1">&#39;Series Name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">Average</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+                                                                                            <span class="n">Standard_Deviation</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;std&#39;</span><span class="p">),</span>
+                                                                                            <span class="n">Min_Value</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">),</span>
+                                                                                           <span class="n">Max_Value</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">],</span>
+                                                                                           <span class="n">ascending</span> <span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Average</th>
+      <th>Standard_Deviation</th>
+      <th>Min_Value</th>
+      <th>Max_Value</th>
+    </tr>
+    <tr>
+      <th>Continent</th>
+      <th>Country Name</th>
+      <th>Series Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="6" valign="top">Europe</td>
+      <td>Luxembourg</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>103053.423196</td>
+      <td>4956.205092</td>
+      <td>93462.924846</td>
+      <td>111968.349481</td>
+    </tr>
+    <tr>
+      <td>Norway</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>87898.970633</td>
+      <td>2974.410936</td>
+      <td>81709.662940</td>
+      <td>91617.279152</td>
+    </tr>
+    <tr>
+      <td>Denmark</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>58781.679393</td>
+      <td>2014.335995</td>
+      <td>55850.636430</td>
+      <td>62356.751713</td>
+    </tr>
+    <tr>
+      <td>Ireland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>53111.037367</td>
+      <td>8754.161228</td>
+      <td>42945.225922</td>
+      <td>74498.386272</td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>51223.263502</td>
+      <td>3648.531691</td>
+      <td>44693.736597</td>
+      <td>56610.684988</td>
+    </tr>
+    <tr>
+      <td>Netherlands</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>49873.875819</td>
+      <td>2423.458097</td>
+      <td>46133.176346</td>
+      <td>53920.033346</td>
+    </tr>
+    <tr>
+      <td>America</td>
+      <td>United States</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>48932.933550</td>
+      <td>2469.756582</td>
+      <td>45047.487198</td>
+      <td>53356.233648</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top">Europe</td>
+      <td>Austria</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>46149.917687</td>
+      <td>2369.899444</td>
+      <td>42001.211163</td>
+      <td>49190.173414</td>
+    </tr>
+    <tr>
+      <td>Finland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>45378.028334</td>
+      <td>2474.236625</td>
+      <td>40450.373375</td>
+      <td>49363.697196</td>
+    </tr>
+    <tr>
+      <td>Asia</td>
+      <td>Japan</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>44801.711300</td>
+      <td>1947.805863</td>
+      <td>42169.733284</td>
+      <td>48567.417060</td>
+    </tr>
+    <tr>
+      <td rowspan="6" valign="top">Europe</td>
+      <td>Belgium</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>43576.850587</td>
+      <td>1859.654970</td>
+      <td>40170.418927</td>
+      <td>46169.062471</td>
+    </tr>
+    <tr>
+      <td>Iceland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>43528.379355</td>
+      <td>4244.833128</td>
+      <td>36554.657520</td>
+      <td>50998.176901</td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>41889.348534</td>
+      <td>3067.162476</td>
+      <td>37998.425312</td>
+      <td>46971.407630</td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>40695.245168</td>
+      <td>1220.428239</td>
+      <td>38460.682101</td>
+      <td>42838.065937</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>39580.994862</td>
+      <td>1951.731031</td>
+      <td>35576.766847</td>
+      <td>42692.564069</td>
+    </tr>
+    <tr>
+      <td>Italy</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>35973.047661</td>
+      <td>1437.309553</td>
+      <td>33615.971782</td>
+      <td>38236.795611</td>
+    </tr>
+    <tr>
+      <td>Oceania</td>
+      <td>New Zealand</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>33787.724182</td>
+      <td>2495.807254</td>
+      <td>28972.976242</td>
+      <td>37776.009741</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top">Europe</td>
+      <td>European Union</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>33552.616912</td>
+      <td>1778.373430</td>
+      <td>30278.763586</td>
+      <td>36735.228314</td>
+    </tr>
+    <tr>
+      <td>Spain</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>30555.549142</td>
+      <td>1228.890140</td>
+      <td>28335.001833</td>
+      <td>32459.917376</td>
+    </tr>
+    <tr>
+      <td>Middle East</td>
+      <td>Israel</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>30014.855494</td>
+      <td>2687.377573</td>
+      <td>26229.399767</td>
+      <td>34333.132338</td>
+    </tr>
+    <tr>
+      <td rowspan="3" valign="top">Europe</td>
+      <td>Greece</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>25501.863791</td>
+      <td>2779.273247</td>
+      <td>22251.257292</td>
+      <td>30054.889388</td>
+    </tr>
+    <tr>
+      <td>Slovenia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>22617.964777</td>
+      <td>2073.978453</td>
+      <td>18570.696068</td>
+      <td>25666.885744</td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>22064.437118</td>
+      <td>551.953640</td>
+      <td>21228.089483</td>
+      <td>23197.446785</td>
+    </tr>
+    <tr>
+      <td>Asia</td>
+      <td>Korea, Rep.</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>20834.854427</td>
+      <td>3453.741905</td>
+      <td>15104.521518</td>
+      <td>26152.030775</td>
+    </tr>
+    <tr>
+      <td rowspan="4" valign="top">Europe</td>
+      <td>Czech Republic</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>19004.468165</td>
+      <td>2345.649464</td>
+      <td>14806.583470</td>
+      <td>22754.752604</td>
+    </tr>
+    <tr>
+      <td>Slovak Republic</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>15367.124257</td>
+      <td>3094.163534</td>
+      <td>10296.714183</td>
+      <td>19882.484492</td>
+    </tr>
+    <tr>
+      <td>Estonia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>15258.712693</td>
+      <td>2694.982415</td>
+      <td>10108.205291</td>
+      <td>19257.476166</td>
+    </tr>
+    <tr>
+      <td>Hungary</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>13183.606528</td>
+      <td>1357.976231</td>
+      <td>10490.350317</td>
+      <td>15695.697944</td>
+    </tr>
+    <tr>
+      <td>America</td>
+      <td>Chile</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>12485.716332</td>
+      <td>1970.224018</td>
+      <td>9469.110468</td>
+      <td>15059.530141</td>
+    </tr>
+    <tr>
+      <td rowspan="3" valign="top">Europe</td>
+      <td>Lithuania</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>12051.931772</td>
+      <td>2978.954615</td>
+      <td>6933.587869</td>
+      <td>16838.543200</td>
+    </tr>
+    <tr>
+      <td>Poland</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>11834.958740</td>
+      <td>2375.439903</td>
+      <td>8525.139502</td>
+      <td>15823.010798</td>
+    </tr>
+    <tr>
+      <td>Latvia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>11715.631084</td>
+      <td>2567.091699</td>
+      <td>6934.722926</td>
+      <td>15532.225029</td>
+    </tr>
+    <tr>
+      <td>Middle East</td>
+      <td>Turkey</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>10883.868372</td>
+      <td>2256.163416</td>
+      <td>7631.651692</td>
+      <td>14936.401761</td>
+    </tr>
+    <tr>
+      <td>America</td>
+      <td>Brazil</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>10376.616469</td>
+      <td>1128.515134</td>
+      <td>8776.858300</td>
+      <td>11912.144552</td>
+    </tr>
+    <tr>
+      <td>World</td>
+      <td>World</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>9381.337588</td>
+      <td>780.587403</td>
+      <td>8189.458707</td>
+      <td>10657.782022</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top">America</td>
+      <td>Mexico</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>9234.971699</td>
+      <td>378.967887</td>
+      <td>8712.140597</td>
+      <td>9942.866356</td>
+    </tr>
+    <tr>
+      <td>Latin America &amp; Caribbean</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>8578.212505</td>
+      <td>837.566481</td>
+      <td>7344.747219</td>
+      <td>9547.935423</td>
+    </tr>
+    <tr>
+      <td>Middle East</td>
+      <td>Middle East &amp; North Africa</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>6835.049568</td>
+      <td>707.258456</td>
+      <td>5707.944854</td>
+      <td>7752.261984</td>
+    </tr>
+    <tr>
+      <td>Asia</td>
+      <td>China</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>4174.178772</td>
+      <td>1828.468836</td>
+      <td>1771.741506</td>
+      <td>7329.089299</td>
+    </tr>
+    <tr>
+      <td>Africa</td>
+      <td>Sub-Saharan Africa</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>1481.155884</td>
+      <td>166.462302</td>
+      <td>1201.349510</td>
+      <td>1679.700986</td>
+    </tr>
+    <tr>
+      <td>Asia</td>
+      <td>South Asia</td>
+      <td>GDP per capita (constant 2010 US$)</td>
+      <td>1206.076090</td>
+      <td>310.516860</td>
+      <td>802.166527</td>
+      <td>1796.159418</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br/></p>
+<h2 id="7.-Data-Types-and-Missing-Values">7. <a href="#IV">Data Types and Missing Values</a><a class="anchor-link" href="#7.-Data-Types-and-Missing-Values">&#182;</a></h2><p><a id="IV"></a>
+<br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="7.1-Data-Types">7.1 <a href="#IV.I">Data Types</a><a class="anchor-link" href="#7.1-Data-Types">&#182;</a></h3><p><a id="IV.I"></a>
 <br/></p>
 <p>At the end of the prior section we introduced an operator to modify the type a specific column. The correct name of the type of a column in a <code>DataFrame</code> (or <code>Series</code>) is <strong>dtype</strong>.</p>
 <p><br/></p>
@@ -17378,7 +18372,7 @@ Length: 59299, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="6.1.1-Specific-Column">6.1.1 Specific Column<a class="anchor-link" href="#6.1.1-Specific-Column">&#182;</a></h4><p><br/></p>
+<h4 id="7.1.1-Specific-Column">7.1.1 Specific Column<a class="anchor-link" href="#7.1.1-Specific-Column">&#182;</a></h4><p><br/></p>
 <p>So, you can use the <code>dtype</code> attribute of a <code>Series</code> to grab the type of a specific column. For instance, we can get the <code>dtype</code> of the <code>Time</code> column in our data.</p>
 
 </div>
@@ -17386,7 +18380,7 @@ Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">dtype</span>
@@ -17402,7 +18396,7 @@ Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -17421,7 +18415,7 @@ Length: 59299, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h4 id="6.1.2-Every-column-in-the-dataset">6.1.2 Every column in the dataset<a class="anchor-link" href="#6.1.2-Every-column-in-the-dataset">&#182;</a></h4><p><br/>
+<h4 id="7.1.2-Every-column-in-the-dataset">7.1.2 Every column in the dataset<a class="anchor-link" href="#7.1.2-Every-column-in-the-dataset">&#182;</a></h4><p><br/>
 Alternatively, the <code>dtypes</code> attribute of a <code>DataFrame</code> returns the <code>dtype</code>of <em>every</em> column.</p>
 
 </div>
@@ -17429,7 +18423,7 @@ Alternatively, the <code>dtypes</code> attribute of a <code>DataFrame</code> ret
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
@@ -17445,7 +18439,7 @@ Alternatively, the <code>dtypes</code> attribute of a <code>DataFrame</code> ret
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[61]:</div>
+    <div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -17481,7 +18475,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dtype</span>
@@ -17497,7 +18491,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -17516,11 +18510,11 @@ dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As a final note to this section, let's remark that Pandas also supports more exoctic data types. For example, categorical data and timeseries data are also allowed.</p>
-<h3 id="6.2-Missing-data">6.2 <a href="#IV.II">Missing data</a><a class="anchor-link" href="#6.2-Missing-data">&#182;</a></h3><p><a id="IV.II"></a>
+<h3 id="7.2-Missing-data">7.2 <a href="#IV.II">Missing data</a><a class="anchor-link" href="#7.2-Missing-data">&#182;</a></h3><p><a id="IV.II"></a>
 <br/>
 Entries with missing values are given the value NaN, short for "Not a Number". For technical reasons these <code>NaN</code> values are always of the <code>float64</code> dtype.
 <br/></p>
-<h4 id="6.2.1-Selecting-missing-rows-data">6.2.1 Selecting missing rows data<a class="anchor-link" href="#6.2.1-Selecting-missing-rows-data">&#182;</a></h4><p><br/>
+<h4 id="7.2.1-Selecting-missing-rows-data">7.2.1 Selecting missing rows data<a class="anchor-link" href="#7.2.1-Selecting-missing-rows-data">&#182;</a></h4><p><br/>
 Pandas provides some methods specific to missing data. To select <code>NaN</code> entries you can use <code>pd.isnull()</code> (or its companion <code>pd.notnull()</code>). For example, lets output all the rows of our dataset that has <code>value</code> column with missing values.</p>
 
 </div>
@@ -17528,7 +18522,7 @@ Pandas provides some methods specific to missing data. To select <code>NaN</code
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="p">)]</span>
@@ -17544,7 +18538,7 @@ Pandas provides some methods specific to missing data. To select <code>NaN</code
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -17721,7 +18715,7 @@ Pandas provides some methods specific to missing data. To select <code>NaN</code
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Unknown&quot;</span><span class="p">)</span>
@@ -17737,7 +18731,7 @@ Pandas provides some methods specific to missing data. To select <code>NaN</code
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[64]:</div>
+    <div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -17773,7 +18767,7 @@ Name: value, Length: 59299, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Continent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Continent</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -17796,7 +18790,7 @@ Name: value, Length: 59299, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
+    <div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -17815,12 +18809,12 @@ Name: value, Length: 59299, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h2 id="7.-Renaming-and-Combining">7. <a href="#IIV">Renaming and Combining</a><a class="anchor-link" href="#7.-Renaming-and-Combining">&#182;</a></h2><p><a id="IIV"></a>
+<h2 id="8.-Renaming-and-Combining">8. <a href="#IIV">Renaming and Combining</a><a class="anchor-link" href="#8.-Renaming-and-Combining">&#182;</a></h2><p><a id="IIV"></a>
 <br/>
 Data comes often to us with column names, index names or other naming conventions that we are not satisfied with. In that case, we will learn how to use pandas functions to change the names of the entries we need to.</p>
 <p>We will also explore three methods to combine data from multiple <code>DataFame</code> and/or <code>Series</code>.
 <br/></p>
-<h3 id="7.1-Renaming">7.1 <a href="#IIV.I">Renaming</a><a class="anchor-link" href="#7.1-Renaming">&#182;</a></h3><p><a id="IIV.I"></a>
+<h3 id="8.1-Renaming">8.1 <a href="#IIV.I">Renaming</a><a class="anchor-link" href="#8.1-Renaming">&#182;</a></h3><p><a id="IIV.I"></a>
 <br/>
 The first function to introduce here is <code>rename()</code>, which allows you to change index names and/or column names. For example, to change the <code>value</code> column in our dataset to <code>Series Value</code>, we would do:
 <br/></p>
@@ -17830,7 +18824,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Series Value&#39;</span><span class="p">})</span>
@@ -17846,7 +18840,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[66]:</div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -18023,7 +19017,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#declare the set of column names to modify</span>
@@ -18049,7 +19043,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[67]:</div>
+    <div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -18226,7 +19220,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;FirstRow&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;SecondRow&#39;</span><span class="p">})</span>
@@ -18242,7 +19236,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[68]:</div>
+    <div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -18414,7 +19408,7 @@ The first function to introduce here is <code>rename()</code>, which allows you 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is very common to rename columns, but rename index values is very rarely. For doing so it is usually more convenient to use the <code>set_index()</code> method.
 <br/></p>
-<h4 id="7.1.1-Renaming-axis">7.1.1 Renaming axis<a class="anchor-link" href="#7.1.1-Renaming-axis">&#182;</a></h4><p><br/>
+<h4 id="8.1.1-Renaming-axis">8.1.1 Renaming axis<a class="anchor-link" href="#8.1.1-Renaming-axis">&#182;</a></h4><p><br/>
 Both rows and columns have their own name attribute. So, additionaly to renaming values of each axis  <code>rename_axis()</code> method may be used to change these name attribute (naming the hole rows or the hole columns). For example:</p>
 
 </div>
@@ -18422,7 +19416,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;Observations&quot;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">&quot;Features&quot;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
@@ -18438,7 +19432,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[69]:</div>
+    <div class="prompt output_prompt">Out[71]:</div>
 
 
 
@@ -18620,7 +19614,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br/></p>
-<h3 id="7.2-Combining">7.2 <a href="#IIV.II">Combining</a><a class="anchor-link" href="#7.2-Combining">&#182;</a></h3><p><a id="IIV.II"></a>
+<h3 id="8.2-Combining">8.2 <a href="#IIV.II">Combining</a><a class="anchor-link" href="#8.2-Combining">&#182;</a></h3><p><a id="IIV.II"></a>
 <br/></p>
 <p>When working on a dataset, we will sometimes need to combine different <code>DataFrames</code> and/or <code>Series</code> in <em>non-trivial</em> ways. Pandas has three core methods for doing this. Ranked on increasing complexity, these methods are <code>concat()</code>, <code>join()</code>, and <code>merge()</code>.</p>
 <p>As its name says, <code>concat()</code> will concatenate two <code>DataFrames</code> together along an axis. This method is very useful when working with data in different <code>DataFrames</code> or <code>Series</code> objects but having the same fields (columns) .</p>
@@ -18643,7 +19637,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#First of all let&#39;s select only entries reported by Portugal</span>
@@ -18657,7 +19651,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Then let&#39;s set the conditions to select the data</span>
@@ -18674,7 +19668,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Then select and rename each series</span>
@@ -18691,7 +19685,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Finally let&#39;s concatenate all together</span>
@@ -18718,7 +19712,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[73]:</div>
+    <div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -18919,7 +19913,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">right</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Key&#39;</span><span class="p">:[</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2003</span><span class="p">],</span>
@@ -18943,7 +19937,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">right</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Key&#39;</span><span class="p">),</span><span class="n">lsuffix</span><span class="o">=</span><span class="s1">&#39;_Dolar&#39;</span><span class="p">,</span><span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_Euro&#39;</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Key&#39;</span><span class="p">)</span>
@@ -18959,7 +19953,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -19039,7 +20033,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Let&#39;s set the conditions to select the data</span>
@@ -19062,7 +20056,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_gov_view</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gdp_econ_view</span><span class="p">)</span>
@@ -19078,7 +20072,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -19321,7 +20315,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;_Dolar&#39;</span><span class="p">,</span><span class="s1">&#39;_Euro&#39;</span><span class="p">),</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Key&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -19337,7 +20331,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[78]:</div>
+    <div class="prompt output_prompt">Out[80]:</div>
 
 
 
@@ -19403,7 +20397,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">gdp_gov_view</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span><span class="n">gdp_econ_view</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span><span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="n">validate</span><span class="o">=</span><span class="s1">&#39;1:1&#39;</span><span class="p">)</span>
@@ -19419,7 +20413,7 @@ Both rows and columns have their own name attribute. So, additionaly to renaming
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[79]:</div>
+    <div class="prompt output_prompt">Out[81]:</div>
 
 
 
