@@ -6,7 +6,7 @@
 
 ### Summary
 
-In this second part of Introduction to Programing course, we will be working with data. This part will be a  practical one and so we will be using an example database.
+In this workshop series named A crash course in Python for Data Science, we will be working with data.
 
 The data that will be using was extracted from [The World Bank](https://databank.worldbank.org/source/world-development-indicators). The extraction period is from 2000 to the last available date (in most cases 2017). 
 
@@ -16,7 +16,7 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 ## Agenda
 
-#### April 15
+#### Part 1
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
@@ -29,7 +29,7 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 
 
-#### April 22
+#### Part 2
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
@@ -40,7 +40,7 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 
 
-#### May 6
+#### Part 3
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
