@@ -53,7 +53,7 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 
 ### About the information sources
 
-Below are the links that you can follow to go to the webpages of the courses that serve as basis for the contruction of this Crash Course. They are arrange by topic:
+Below are the links that you can follow to go to the webpages of the courses that serve as basis for the construction of this course. They are arrange by topic:
 
 + Python: [Udemy](https://www.udemy.com/complete-python-bootcamp/?couponCode=COMPLETE_GITHUB)
 + pandas: [Kaggle Course](https://www.kaggle.com/learn/pandas)
