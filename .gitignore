@@ -1,0 +1,5 @@
+notebooks/old/
+data/old/
+.ipynb_checkpoints/
+notebooks/solved/.ipynb_checkpoints
+notebooks/solved/0_TransformRawData.ipynb
