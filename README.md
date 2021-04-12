@@ -27,20 +27,26 @@ A full description of the dataset can be find [here](https://github.com/EduardoH
 | Datasets | Data Types and Missing Values | T&E | 30 min |
 | Datasets | Renaming and Combining | T&E | 30 min |
 
-
-
 #### Part 2
+
+| General Topic | Single topics  | Type | Estimated time  |
+| :-----: | :-: | :-: | :-: |
+| Datasets | Recap | T&E | 30 min |
+| Visualization | Power BI | T&E | 90 min |
+
+
+#### Part 3
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
 | Intro to ML | Missing Values | T&E | 30 min |
 | Intro to ML | Categorical Variables | T&E | 30 min |
 | Intro to ML | Logistic Regression | T&E | 60 min |
-| Visualization | plotnine “The grammar of graphics” | T&E | 60 min |
 
 
 
-#### Part 3
+
+#### Part 4
 
 | General Topic | Single topics  | Type | Estimated time  |
 | :-----: | :-: | :-: | :-: |
