@@ -8,9 +8,9 @@
 
 In this workshop series named A crash course in Python for Data Science, we will be working with data.
 
-The data that will be using was extracted from [The World Bank](https://databank.worldbank.org/source/world-development-indicators). The extraction period is from 2000 to the last available date (in most cases 2017). 
+The data that will be using was extracted from [The World Bank](https://databank.worldbank.org/source/world-development-indicators). The extraction period is from 2000 to the last available date (in most cases 2020). 
 
-A full description of the dataset can be find [here](https://github.com/EduardoHidalgoGarcia/WorldBankData/blob/master/World%20Bank%20Indicators%202000%20-%202018.pdf).
+A full description of the dataset can be find [here](https://github.com/EduardoHidalgoGarcia/WorldBankData/blob/master/2019/World%20Bank%20Indicators%202000%20-%202018.pdf).
 
 [Github repo](https://github.com/EduardoHidalgoGarcia/IntroDS)
 
